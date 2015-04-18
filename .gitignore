@@ -308,3 +308,8 @@ ProvaSiteware/ProvaSiteware.MVC/bin/AutoMapper.Net4.dll
 ProvaSiteware/ProvaSiteware.MVC/bin/AutoMapper.Net4.pdb
 ProvaSiteware/ProvaSiteware.MVC/bin/AutoMapper.pdb
 ProvaSiteware/ProvaSiteware.MVC/bin/AutoMapper.xml
+ProvaSiteware/ProvaSiteware.Application/bin/Debug/ProvaSiteware.Domain.dll
+ProvaSiteware/ProvaSiteware.Application/bin/Debug/ProvaSiteware.Domain.pdb
+ProvaSiteware/ProvaSiteware.MVC/bin/ProvaSiteware.Application.dll
+ProvaSiteware/ProvaSiteware.MVC/bin/ProvaSiteware.Application.pdb
+ProvaSiteware/ProvaSiteware.MVC/obj/Debug/DesignTimeResolveAssemblyReferences.cache

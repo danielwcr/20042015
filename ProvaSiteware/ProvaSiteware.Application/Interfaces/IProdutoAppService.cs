@@ -5,9 +5,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ProvaSiteware.Domain.Interfaces.Repositories
+namespace ProvaSiteware.Application.Interfaces
 {
-    public interface IProdutoRepository : IRepositoryBase<Produto>
+    public interface IProdutoAppService : IAppServiceBase<Produto>
     {
 
     }
