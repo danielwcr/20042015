@@ -1,0 +1,29 @@
+﻿@model ProvaSiteware.MVC.ViewModels.ProdutoViewModel
+
+@{
+    ViewBag.Title = "Detalhes do Produto";
+}
+
+<h2>Details</h2>
+
+<fieldset>
+    <legend>ProdutoViewModel</legend>
+
+    <div class="display-label">
+        @Html.DisplayNameFor(model => model.Nome)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Nome)
+    </div>
+
+    <div class="display-label">
+        @Html.DisplayNameFor(model => model.Preco)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Preco)
+    </div>
+</fieldset>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.Codigo }) |
+    @Html.ActionLink("Voltar para lista", "Index")
+</p>

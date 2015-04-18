@@ -7,22 +7,25 @@ using System.Web.Mvc;
 using ProvaSiteware.MVC.Common;
 using ProvaSiteware.MVC.ViewModels;
 using AutoMapper;
+using ProvaSiteware.Application;
+using ProvaSiteware.Domain.Entities;
 
 namespace ProvaSiteware.MVC.Controllers
 {
     public class ProdutoController : Controller
     {
-        private readonly ProdutoService service;
+        private readonly ProdutoAppService ProdutoApp;
 
         public ActionResult Index()
         {
-            var produtos = service.GetAll();
+            var produtos = ProdutoApp.GetAll();
             return View(Mapper.Map<IEnumerable<ProdutoViewModel>>(produtos));
         }
 
         public ActionResult Details(int id)
         {
-            return View();
+            var produto = ProdutoApp.Get(id);
+            return View(Mapper.Map<ProdutoViewModel>(produto));
         }
 
         public ActionResult Create()
@@ -31,58 +34,54 @@ namespace ProvaSiteware.MVC.Controllers
         }
 
         [HttpPost]
-        public ActionResult Create(FormCollection collection)
+        public ActionResult Create(ProdutoViewModel produtoViewModel)
         {
-            try
+            if (ModelState.IsValid)
             {
-                // TODO: Add insert logic here
+                var produto = Mapper.Map<Produto>(produtoViewModel);
+                ProdutoApp.Insert(produto);
 
                 return RedirectToAction("Index");
             }
-            catch
-            {
-                return View();
-            }
+
+            return View(produtoViewModel);
         }
 
         public ActionResult Edit(int id)
         {
-            return View();
+            var produto = ProdutoApp.Get(id);
+            return View(Mapper.Map<ProdutoViewModel>(produto));
         }
 
         [HttpPost]
-        public ActionResult Edit(int id, FormCollection collection)
+        [ValidateAntiForgeryToken]
+        public ActionResult Edit(ProdutoViewModel produtoViewModel)
         {
-            try
+            if (ModelState.IsValid)
             {
-                // TODO: Add update logic here
+                var produto = Mapper.Map<Produto>(produtoViewModel);
+                ProdutoApp.Insert(produto);
 
                 return RedirectToAction("Index");
             }
-            catch
-            {
-                return View();
-            }
+
+            return View(produtoViewModel);
         }
 
         public ActionResult Delete(int id)
         {
-            return View();
+            var produto = ProdutoApp.Get(id);
+            return View(Mapper.Map<ProdutoViewModel>(produto));
         }
 
-        [HttpPost]
-        public ActionResult Delete(int id, FormCollection collection)
+        [HttpPost, ActionName("Delete")]
+        [ValidateAntiForgeryToken]
+        public ActionResult DeleteConfirmed(int id)
         {
-            try
-            {
-                // TODO: Add delete logic here
+            var produto = ProdutoApp.Get(id);
+            ProdutoApp.Delete(produto);
 
-                return RedirectToAction("Index");
-            }
-            catch
-            {
-                return View();
-            }
+            return RedirectToAction("Index");
         }
     }
 }
