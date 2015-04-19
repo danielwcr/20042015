@@ -1,0 +1,71 @@
+﻿@model IEnumerable<ProvaSiteware.MVC.ViewModels.ItemCarrinhoViewModel>
+
+@{
+    ViewBag.Title = "Carrinho";
+}
+
+<h2>Carrinho</h2>
+@using (Html.BeginForm("Refresh", "Carrinho", FormMethod.Post))
+{
+    @Html.ValidationSummary(true)
+
+    <table>
+        <tr>
+            <th>Item
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Quantidade)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Produto.Preco)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Preco)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.PromocaoAplicavel.Nome)
+            </th>
+            <th></th>
+        </tr>
+
+        @for (int i = 0; i < Model.Count(); i++)
+        {
+            var item = Model.ElementAt(i);
+            
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Produto.Nome)
+                </td>
+                <td>
+                    @Html.Hidden("[" + i + "].CodigoProduto", item.CodigoProduto)
+                    @Html.EditorFor(model => item.Quantidade, null, "[" + i + "].Quantidade")
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Produto.Preco)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Preco)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.PromocaoAplicavel.Nome)
+                </td>
+                <td>
+                    @Html.ActionLink("Remover", "Remove", new { codigoProduto = item.CodigoProduto })
+                </td>
+            </tr>
+        }
+        <tr>
+            <td></td>
+            <td>Total
+            </td>
+            <td></td>
+            <td>
+                @Model.Sum(p => p.Preco).ToString("C")
+            </td>
+            <td></td>
+            <td></td>
+        </tr>
+    </table>
+    
+    <input type="submit" value="Atualizar" />
+}

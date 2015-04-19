@@ -9,6 +9,6 @@ namespace ProvaSiteware.Application.Interfaces
 {
     public interface IProdutoAppService : IAppServiceBase<Produto>
     {
-
+        
     }
 }

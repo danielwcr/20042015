@@ -1,10 +1,10 @@
 ﻿@model IEnumerable<ProvaSiteware.MVC.ViewModels.ProdutoViewModel>
 
 @{
-    ViewBag.Title = "Produtos";
+    ViewBag.Title = "Lista de Produtos";
 }
 
-<h2>Index</h2>
+<h2>Lista de Produtos</h2>
 
 <p>
     @Html.ActionLink("Adicionar", "Create")
@@ -30,9 +30,10 @@
                 @Html.DisplayFor(modelItem => item.Preco)
             </td>
             <td>
-                @Html.ActionLink("Edit", "Edit", new { id = item.Codigo }) |
-            @Html.ActionLink("Details", "Details", new { id = item.Codigo }) |
-            @Html.ActionLink("Delete", "Delete", new { id = item.Codigo })
+                @Html.ActionLink("Adicionar ao Carrinho", "Add", "Carrinho", new { codigoProduto = item.Codigo }, null) |
+                @Html.ActionLink("Editar", "Edit", new { id = item.Codigo }) |
+                @Html.ActionLink("Ver Detalhes", "Details", new { id = item.Codigo }) |
+                @Html.ActionLink("Excluir", "Delete", new { id = item.Codigo })
             </td>
         </tr>
     }

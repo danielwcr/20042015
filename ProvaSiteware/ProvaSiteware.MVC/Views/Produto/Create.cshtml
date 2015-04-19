@@ -4,14 +4,13 @@
     ViewBag.Title = "Inclusão de Produto";
 }
 
-<h2>Create</h2>
-
 @using (Html.BeginForm())
 {
+    @Html.AntiForgeryToken()
     @Html.ValidationSummary(true)
 
     <fieldset>
-        <legend>ProdutoViewModel</legend>
+        <legend>Inclusão de Produto</legend>
 
         <div class="editor-label">
             @Html.LabelFor(model => model.Nome)
@@ -29,14 +28,22 @@
             @Html.ValidationMessageFor(model => model.Preco)
         </div>
 
+        <div class="editor-label">
+            @Html.LabelFor(model => model.TipoPromocao)
+        </div>
+        <div class="editor-field">
+            @Html.DropDownListFor(model => model.TipoPromocao, (ViewBag.Promocoes as IEnumerable<SelectListItem>), "Sem promoção")
+            @Html.ValidationMessageFor(model => model.TipoPromocao)
+        </div>
+
         <p>
-            <input type="submit" value="Create" />
+            <input type="submit" value="Salvar" />
         </p>
     </fieldset>
 }
 
 <div>
-    @Html.ActionLink("Voltar para lista", "Index")
+    @Html.ActionLink("Cancelar", "Index")
 </div>
 
 @section Scripts {

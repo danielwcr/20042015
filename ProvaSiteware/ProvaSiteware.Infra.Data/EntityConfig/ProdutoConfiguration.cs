@@ -14,6 +14,7 @@ namespace ProvaSiteware.Infra.Data.EntityConfig
             HasKey(p => p.Codigo);
             Property(p => p.Nome).IsRequired().HasMaxLength(200);
             Property(p => p.Preco).IsRequired();
+            Ignore(p => p.Promocao);
         }
     }
 }

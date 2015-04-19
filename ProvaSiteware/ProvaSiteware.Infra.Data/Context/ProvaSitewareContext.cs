@@ -12,6 +12,7 @@ namespace ProvaSiteware.Infra.Data.Context
 {
     public class ProvaSitewareContext : DbContext
     {
+        
         public ProvaSitewareContext()
             : base("ProvaSitewareDBConnection")
         {

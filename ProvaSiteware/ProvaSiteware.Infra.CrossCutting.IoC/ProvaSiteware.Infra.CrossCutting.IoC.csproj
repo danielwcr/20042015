@@ -4,11 +4,11 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{3267C211-17EE-4DB3-A882-CCFF775AE878}</ProjectGuid>
+    <ProjectGuid>{67D959A3-E95F-4A18-837F-0C4FC86C0C74}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>ProvaSiteware.Application</RootNamespace>
-    <AssemblyName>ProvaSiteware.Application</AssemblyName>
+    <RootNamespace>ProvaSiteware.Infra.CrossCutting.IoC</RootNamespace>
+    <AssemblyName>ProvaSiteware.Infra.CrossCutting.IoC</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
@@ -39,19 +39,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="AppServiceBase.cs" />
-    <Compile Include="CarrinhoAppService.cs" />
-    <Compile Include="Interfaces\ICarrinhoAppService.cs" />
-    <Compile Include="Interfaces\IAppServiceBase.cs" />
-    <Compile Include="Interfaces\IProdutoAppService.cs" />
-    <Compile Include="ProdutoAppService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\ProvaSiteware.Domain\ProvaSiteware.Domain.csproj">
-      <Project>{d9219f5c-06eb-41b8-964f-387353362d29}</Project>
-      <Name>ProvaSiteware.Domain</Name>
-    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

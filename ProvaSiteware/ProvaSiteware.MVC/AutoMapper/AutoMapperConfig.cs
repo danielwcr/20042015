@@ -11,6 +11,8 @@ namespace ProvaSiteware.MVC.AutoMapper
                 p.AddProfile<DomainToViewModelProfile>();
                 p.AddProfile<ViewModelToDomainProfile>();
             });
+
+            Mapper.AssertConfigurationIsValid();
         }
     }
 }

@@ -7,40 +7,48 @@ using System.Web.Mvc;
 using ProvaSiteware.MVC.Common;
 using ProvaSiteware.MVC.ViewModels;
 using AutoMapper;
-using ProvaSiteware.Application;
 using ProvaSiteware.Domain.Entities;
+using ProvaSiteware.Application.Interfaces;
+using ProvaSiteware.Domain.Common;
+using ProvaSiteware.Domain.Common.Helpers;
 
 namespace ProvaSiteware.MVC.Controllers
 {
     public class ProdutoController : Controller
     {
-        private readonly ProdutoAppService ProdutoApp;
+        private readonly IProdutoAppService produtoApp;
+
+        public ProdutoController(IProdutoAppService produtoApp)
+        {
+            this.produtoApp = produtoApp;
+        }
 
         public ActionResult Index()
         {
-            var produtos = ProdutoApp.GetAll();
+            var produtos = produtoApp.GetAll();
             return View(Mapper.Map<IEnumerable<ProdutoViewModel>>(produtos));
         }
 
         public ActionResult Details(int id)
         {
-            var produto = ProdutoApp.Get(id);
+            var produto = produtoApp.Get(id);
             return View(Mapper.Map<ProdutoViewModel>(produto));
         }
 
         public ActionResult Create()
         {
+            ViewBag.Promocoes = SelectListHelper.ToSelectList<TipoPromocao>();
             return View();
         }
 
         [HttpPost]
+        [ValidateAntiForgeryToken]
         public ActionResult Create(ProdutoViewModel produtoViewModel)
         {
             if (ModelState.IsValid)
             {
                 var produto = Mapper.Map<Produto>(produtoViewModel);
-                ProdutoApp.Insert(produto);
-
+                produtoApp.Insert(produto);
                 return RedirectToAction("Index");
             }
 
@@ -49,7 +57,11 @@ namespace ProvaSiteware.MVC.Controllers
 
         public ActionResult Edit(int id)
         {
-            var produto = ProdutoApp.Get(id);
+            var produto = produtoApp.Get(id);
+            ViewBag.Promocoes = SelectListHelper.ToSelectList<TipoPromocao>(produto.TipoPromocao);
+
+            
+
             return View(Mapper.Map<ProdutoViewModel>(produto));
         }
 
@@ -60,7 +72,7 @@ namespace ProvaSiteware.MVC.Controllers
             if (ModelState.IsValid)
             {
                 var produto = Mapper.Map<Produto>(produtoViewModel);
-                ProdutoApp.Insert(produto);
+                produtoApp.Update(produto);
 
                 return RedirectToAction("Index");
             }
@@ -70,7 +82,7 @@ namespace ProvaSiteware.MVC.Controllers
 
         public ActionResult Delete(int id)
         {
-            var produto = ProdutoApp.Get(id);
+            var produto = produtoApp.Get(id);
             return View(Mapper.Map<ProdutoViewModel>(produto));
         }
 
@@ -78,8 +90,8 @@ namespace ProvaSiteware.MVC.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(int id)
         {
-            var produto = ProdutoApp.Get(id);
-            ProdutoApp.Delete(produto);
+            var produto = produtoApp.Get(id);
+            produtoApp.Delete(produto);
 
             return RedirectToAction("Index");
         }

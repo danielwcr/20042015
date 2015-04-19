@@ -4,10 +4,8 @@
     ViewBag.Title = "Detalhes do Produto";
 }
 
-<h2>Details</h2>
-
 <fieldset>
-    <legend>ProdutoViewModel</legend>
+    <legend>Detalhes do Produto</legend>
 
     <div class="display-label">
         @Html.DisplayNameFor(model => model.Nome)
@@ -22,8 +20,15 @@
     <div class="display-field">
         @Html.DisplayFor(model => model.Preco)
     </div>
+
+    <div class="display-label">
+        @Html.DisplayNameFor(model => model.Promocao.Nome)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Promocao.Nome)
+    </div>
 </fieldset>
 <p>
-    @Html.ActionLink("Edit", "Edit", new { id = Model.Codigo }) |
-    @Html.ActionLink("Voltar para lista", "Index")
+    @Html.ActionLink("Adicionar ao Carrinho", "Add", "Carrinho", new { codigoProduto = Model.Codigo }, null) |
+    @Html.ActionLink("Voltar", "Index")
 </p>
