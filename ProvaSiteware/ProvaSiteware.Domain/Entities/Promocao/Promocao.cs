@@ -11,18 +11,17 @@ namespace ProvaSiteware.Domain.Entities
     public abstract class Promocao
     {
         private TipoPromocao? tipoPromocao;
-
         public TipoPromocao TipoPromocao
         {
             get
             {
                 if (!tipoPromocao.HasValue)
                 {
-                    var att = (PromocaoAttribute[])this.GetType().GetCustomAttributes(typeof(PromocaoAttribute), true);
-                    if (att.Length == 1)
-                        tipoPromocao = att[0].TipoPromocao;
+                    var attibutes = (PromocaoAttribute[])this.GetType().GetCustomAttributes(typeof(PromocaoAttribute), true);
+                    if (attibutes.Length == 1)
+                        tipoPromocao = attibutes[0].TipoPromocao;
                     else
-                        tipoPromocao = TipoPromocao.Indefinido;
+                        throw new Exception(string.Format("Atributo 'PromocaoAttribute' não foi configurado corretamente para a classe {0}", this.GetType()));
                 }
 
                 return tipoPromocao.Value;
@@ -36,7 +35,7 @@ namespace ProvaSiteware.Domain.Entities
 
         public static Promocao Obter(TipoPromocao? tipoPromocao)
         {
-            if (!tipoPromocao.HasValue) return null;
+            if (!tipoPromocao.HasValue || tipoPromocao.Value == TipoPromocao.SemPromocao) return null;
 
             return ListarPromocoes().FirstOrDefault(p => p.TipoPromocao == tipoPromocao.Value);
         }

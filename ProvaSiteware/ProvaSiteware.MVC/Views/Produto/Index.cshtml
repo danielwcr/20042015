@@ -4,18 +4,20 @@
     ViewBag.Title = "Lista de Produtos";
 }
 
-<h2>Lista de Produtos</h2>
+<div class="page-header">
+    <h2>Lista de Produtos</h2>
+</div>
 
-<p>
-    @Html.ActionLink("Adicionar", "Create")
-</p>
-<table>
+<table class="table table-bordered table-striped">
     <tr>
         <th>
             @Html.DisplayNameFor(model => model.Nome)
         </th>
         <th>
             @Html.DisplayNameFor(model => model.Preco)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Promocao.Nome)
         </th>
         <th></th>
     </tr>
@@ -30,12 +32,19 @@
                 @Html.DisplayFor(modelItem => item.Preco)
             </td>
             <td>
+                @Html.DisplayFor(modelItem => item.Promocao.Nome)
+            </td>
+            <td>
                 @Html.ActionLink("Adicionar ao Carrinho", "Add", "Carrinho", new { codigoProduto = item.Codigo }, null) |
+                @*@Html.ActionLink("Detalhes", "Details", new { id = item.Codigo }) |*@
                 @Html.ActionLink("Editar", "Edit", new { id = item.Codigo }) |
-                @Html.ActionLink("Ver Detalhes", "Details", new { id = item.Codigo }) |
                 @Html.ActionLink("Excluir", "Delete", new { id = item.Codigo })
             </td>
         </tr>
     }
 
 </table>
+
+<p>
+    @Html.ActionLink("Incluir produto", "Create", null, new { @class = "btn btn-default btn-cons" })
+</p>

@@ -38,19 +38,24 @@ namespace ProvaSiteware.MVC.Controllers
         [HttpPost]
         public ActionResult Refresh(IEnumerable<ItemCarrinhoViewModel> itensCarrinho)
         {
-            var carrinhoEmSessao = Carrinho;
-
-            foreach (var item in carrinhoEmSessao.ItensCarrinho)
+            if (ModelState.IsValid)
             {
-                var itemRefresh = itensCarrinho.FirstOrDefault(p => p.CodigoProduto == item.CodigoProduto);
-                if (itemRefresh != null)
-                    item.Quantidade = itemRefresh.Quantidade;
+                var carrinhoEmSessao = Carrinho;
+
+                foreach (var item in carrinhoEmSessao.ItensCarrinho)
+                {
+                    var itemRefresh = itensCarrinho.FirstOrDefault(p => p.CodigoProduto == item.CodigoProduto);
+                    if (itemRefresh != null)
+                        item.Quantidade = itemRefresh.Quantidade;
+                }
+
+                var carrinho = carrinhoApp.AtualizarItensCarrinho(Mapper.Map<Carrinho>(carrinhoEmSessao));
+                AtualizarSessao(carrinho);
+
+                return RedirectToAction("Index");
             }
 
-            var carrinho = carrinhoApp.AtualizarItensCarrinho(Mapper.Map<Carrinho>(carrinhoEmSessao));
-            AtualizarSessao(carrinho);
-
-            return RedirectToAction("Index");
+            return View("Index", itensCarrinho);
         }
 
         public ActionResult Add(int codigoProduto)

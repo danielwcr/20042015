@@ -13,9 +13,9 @@ namespace ProvaSiteware.MVC.App_Start
     using ProvaSiteware.Domain.Interfaces.Services;
     using ProvaSiteware.Domain.Services;
     using ProvaSiteware.Domain.Interfaces.Repositories;
-    using ProvaSiteware.Infra.Data.Repositories;
     using ProvaSiteware.Application.Interfaces;
     using ProvaSiteware.Application;
+    using ProvaSiteware.Infra.Data.Repositories;
 
     public static class NinjectWebCommon
     {

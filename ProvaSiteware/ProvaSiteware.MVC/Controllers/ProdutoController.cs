@@ -4,7 +4,6 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
-using ProvaSiteware.MVC.Common;
 using ProvaSiteware.MVC.ViewModels;
 using AutoMapper;
 using ProvaSiteware.Domain.Entities;
@@ -37,7 +36,6 @@ namespace ProvaSiteware.MVC.Controllers
 
         public ActionResult Create()
         {
-            ViewBag.Promocoes = SelectListHelper.ToSelectList<TipoPromocao>();
             return View();
         }
 
@@ -58,10 +56,6 @@ namespace ProvaSiteware.MVC.Controllers
         public ActionResult Edit(int id)
         {
             var produto = produtoApp.Get(id);
-            ViewBag.Promocoes = SelectListHelper.ToSelectList<TipoPromocao>(produto.TipoPromocao);
-
-            
-
             return View(Mapper.Map<ProdutoViewModel>(produto));
         }
 

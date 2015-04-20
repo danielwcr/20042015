@@ -4,10 +4,12 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using System.Web.Mvc.Html;
 using System.ComponentModel;
 using ProvaSiteware.Domain.Common.Helpers;
+using System.Linq.Expressions;
 
-namespace ProvaSiteware.MVC.Common
+namespace ProvaSiteware.MVC.Helpers
 {
     public static class SelectListHelper
     {
@@ -24,16 +26,7 @@ namespace ProvaSiteware.MVC.Common
                     Selected = value.Equals(selectedValue)
                 });
             }
-
-            //var teste =
-            //    (from p in Enum.GetValues(typeof(TEnum))
-            //     select new
-            //     {
-            //         Text = EnumHelper.GetEnumDescription<TEnum>(p),
-            //         Value = p
-            //     });
-
-
+            
             return listItem;
         }
     }

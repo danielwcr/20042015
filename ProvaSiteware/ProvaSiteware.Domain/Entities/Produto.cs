@@ -16,7 +16,7 @@ namespace ProvaSiteware.Domain.Entities
 
         public decimal Preco { get; set; }
 
-        public TipoPromocao? TipoPromocao { get; set; }
+        public TipoPromocao TipoPromocao { get; set; }
 
         private Promocao promocao;
         public Promocao Promocao

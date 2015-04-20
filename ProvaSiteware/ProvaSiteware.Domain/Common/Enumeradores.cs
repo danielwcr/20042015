@@ -9,7 +9,8 @@ namespace ProvaSiteware.Domain.Common
 {
     public enum TipoPromocao
     {
-        Indefinido = 0,
+        [Description("Sem promoção")]
+        SemPromocao = 0,
         [Description("Pague 1 e leve 2")]
         PagueUmLeveDois = 1,
         [Description("3 por 10 reais")]

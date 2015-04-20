@@ -15,15 +15,24 @@ namespace ProvaSiteware.MVC
                         "~/Scripts/jquery-ui-{version}.js"));
 
             bundles.Add(new ScriptBundle("~/bundles/jqueryval").Include(
-                        "~/Scripts/jquery.unobtrusive*",
-                        "~/Scripts/jquery.validate*"));
+                        "~/Scripts/jquery.validate.js",
+                        "~/Scripts/jquery.validate.unobtrusive.js",
+                        "~/Scripts/globalize/globalize.js",
+                        "~/Scripts/globalize/cultures/globalize.culture.pt-BR.js",
+                        "~/Scripts/methods_pt.js"));
 
             // Use the development version of Modernizr to develop with and learn from. Then, when you're
             // ready for production, use the build tool at http://modernizr.com to pick only the tests you need.
             bundles.Add(new ScriptBundle("~/bundles/modernizr").Include(
                         "~/Scripts/modernizr-*"));
 
-            bundles.Add(new StyleBundle("~/Content/css").Include("~/Content/site.css"));
+            bundles.Add(new ScriptBundle("~/bundles/bootstrap").Include(
+                        "~/Content/Scripts/bootstrap.js"));
+
+            bundles.Add(new StyleBundle("~/Content/css").Include(
+                        "~/Content/site.css",
+                        "~/Content/bootstrap.css",
+                        "~/Content/bootstrap-theme.css"));
 
             bundles.Add(new StyleBundle("~/Content/themes/base/css").Include(
                         "~/Content/themes/base/jquery.ui.core.css",

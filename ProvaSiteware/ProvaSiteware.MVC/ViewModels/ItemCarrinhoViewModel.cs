@@ -12,6 +12,7 @@ namespace ProvaSiteware.MVC.ViewModels
         public int CodigoProduto { get; set; }
 
         [Display(Name = "Quantidade")]
+        [Range(1, 9999999)]
         public int Quantidade { get; set; }
 
         [Display(Name = "Preço")]

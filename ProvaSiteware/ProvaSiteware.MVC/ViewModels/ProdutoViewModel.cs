@@ -17,13 +17,13 @@ namespace ProvaSiteware.MVC.ViewModels
         public string Nome { get; set; }
 
         [Required(ErrorMessage = "Preencha o Preço do produto")]
-        [DataType(DataType.Currency, ErrorMessage = "Preço inválido")]
+        [DataType(DataType.Currency)]
         [Range(0, 9999999999999999.99, ErrorMessage = "Preço inválido")]
         [Display(Name = "Preço")]
         public decimal Preco { get; set; }
 
         [Display(Name = "Promoção")]
-        public TipoPromocao? TipoPromocao { get; set; }
+        public TipoPromocao TipoPromocao { get; set; }
 
         public PromocaoViewModel Promocao { get; set; }
     }
