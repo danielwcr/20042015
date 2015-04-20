@@ -8,6 +8,8 @@
     <h2>Lista de Produtos</h2>
 </div>
 
+
+
 <table class="table table-bordered table-striped">
     <tr>
         <th>
@@ -36,7 +38,6 @@
             </td>
             <td>
                 @Html.ActionLink("Adicionar ao Carrinho", "Add", "Carrinho", new { codigoProduto = item.Codigo }, null) |
-                @*@Html.ActionLink("Detalhes", "Details", new { id = item.Codigo }) |*@
                 @Html.ActionLink("Editar", "Edit", new { id = item.Codigo }) |
                 @Html.ActionLink("Excluir", "Delete", new { id = item.Codigo })
             </td>
