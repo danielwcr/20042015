@@ -778,3 +778,11 @@ ProvaSiteware/ProvaSiteware.Infra.CrossCutting.IoC/bin/Debug/ProvaSiteware.Domai
 ProvaSiteware/ProvaSiteware.Infra.CrossCutting.IoC/bin/Debug/ProvaSiteware.Infra.Data.dll
 ProvaSiteware/ProvaSiteware.Infra.CrossCutting.IoC/bin/Debug/ProvaSiteware.Infra.Data.pdb
 ProvaSiteware/ProvaSiteware.Infra.CrossCutting.IoC/obj/Debug/ProvaSiteware.Infra.CrossCutting.IoC.csprojResolveAssemblyReference.cache
+/ProvaSiteware/packages
+/ProvaSiteware/.vs
+/ProvaSiteware/ProvaSiteware.Infra.Data/bin/Debug
+/ProvaSiteware/ProvaSiteware.Infra.Data.NHibernate/bin/Debug
+/ProvaSiteware/ProvaSiteware.Infra.Data.NHibernate/obj/Debug
+/ProvaSiteware/ProvaSiteware.Infra.IoC/bin/Debug
+/ProvaSiteware/ProvaSiteware.Infra.IoC/obj/Debug
+/ProvaSiteware/ProvaSiteware.MVC/bin

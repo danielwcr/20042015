@@ -1,4 +1,5 @@
-﻿using ProvaSiteware.MVC.AutoMapper;
+﻿using ProvaSiteware.MVC.App_Start;
+using ProvaSiteware.MVC.AutoMapper;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -23,7 +24,10 @@ namespace ProvaSiteware.MVC
             FilterConfig.RegisterGlobalFilters(GlobalFilters.Filters);
             RouteConfig.RegisterRoutes(RouteTable.Routes);
             BundleConfig.RegisterBundles(BundleTable.Bundles);
+
             AutoMapperConfig.RegisterMappings();
+            IoCConfig.RegisterResolver();
+
         }
     }
 }

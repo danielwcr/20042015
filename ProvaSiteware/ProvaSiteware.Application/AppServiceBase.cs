@@ -41,5 +41,10 @@ namespace ProvaSiteware.Application
         {
             service.Delete(obj);
         }
+
+        public void BeginTransaction()
+        {
+
+        }
     }
 }

@@ -1,7 +1,9 @@
-﻿using ProvaSiteware.Domain.Interfaces.Repositories;
+﻿using Microsoft.Practices.ServiceLocation;
+using ProvaSiteware.Domain.Interfaces.Repositories;
 using ProvaSiteware.Infra.Data.Context;
 using System;
 using System.Collections.Generic;
+using System.Data.Entity;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -10,34 +12,37 @@ namespace ProvaSiteware.Infra.Data.Repositories
 {
     public class RepositoryBase<T> : IRepositoryBase<T> where T : class
     {
-        protected ProvaSitewareContext context = new ProvaSitewareContext();
+        protected DbContext Context { get; private set; }
+
+        public RepositoryBase()
+        {
+            var contextManager = ServiceLocator.Current.GetInstance<ContextManager>();
+            Context = contextManager.Context;
+        }
 
         public void Insert(T obj)
         {
-            context.Set<T>().Add(obj);
-            context.SaveChanges();
+            Context.Set<T>().Add(obj);
         }
 
         public T Get(int id)
         {
-            return context.Set<T>().Find(id);
+            return Context.Set<T>().Find(id);
         }
 
         public IEnumerable<T> GetAll()
         {
-            return context.Set<T>().ToList();
+            return Context.Set<T>().ToList();
         }
 
         public void Update(T obj)
         {
-            context.Entry<T>(obj).State = System.Data.Entity.EntityState.Modified;
-            context.SaveChanges();
+            Context.Entry<T>(obj).State = System.Data.Entity.EntityState.Modified;
         }
 
         public void Delete(T obj)
         {
-            context.Set<T>().Remove(obj);
-            context.SaveChanges();
+            Context.Set<T>().Remove(obj);
         }
     }
 }
