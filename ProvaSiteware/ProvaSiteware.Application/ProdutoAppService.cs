@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace ProvaSiteware.Application
 {
-    public class ProdutoAppService : AppServiceBase<Produto>, IProdutoAppService
+    public class ProdutoAppService : AppEntityServiceBase<Produto>, IProdutoAppService
     {
         private readonly IProdutoService service;
 

@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace ProvaSiteware.Application.Interfaces
 {
-    public interface IProdutoAppService : IAppServiceBase<Produto>
+    public interface IProdutoAppService : IAppEntityServiceBase<Produto>
     {
         
     }

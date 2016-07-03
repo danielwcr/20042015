@@ -10,16 +10,13 @@ namespace ProvaSiteware.Domain.Entities
 {
     public class Produto
     {
-        public int Codigo { get; set; }
-
-        public string Nome { get; set; }
-
-        public decimal Preco { get; set; }
-
-        public TipoPromocao TipoPromocao { get; set; }
+        public virtual int Codigo { get; set; }
+        public virtual string Nome { get; set; }
+        public virtual decimal Preco { get; set; }
+        public virtual TipoPromocao TipoPromocao { get; set; }
 
         private Promocao promocao;
-        public Promocao Promocao
+        public virtual Promocao Promocao
         {
             get
             {

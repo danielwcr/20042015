@@ -13,16 +13,33 @@ namespace ProvaSiteware.Infra.Data.Repositories
     public class UnitOfWork : IUnitOfWork
     {
         private DbContext _context;
+        private DbContextTransaction _transaction;
 
-        public void BeginTransaction()
+        public UnitOfWork()
         {
             var contextManager = ServiceLocator.Current.GetInstance<ContextManager>();
             _context = contextManager.Context;
         }
 
+        public void BeginTransaction()
+        {
+            _transaction = _context.Database.BeginTransaction();
+        }
+
         public void Commit()
         {
+            _transaction.Commit();
             _context.SaveChanges();
+        }
+
+        public void Rollback()
+        {
+            _transaction.Rollback();
+        }
+
+        public void Dispose()
+        {
+            _context.Dispose();
         }
     }
 }

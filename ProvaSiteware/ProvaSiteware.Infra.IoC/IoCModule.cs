@@ -4,8 +4,12 @@ using ProvaSiteware.Application.Interfaces;
 using ProvaSiteware.Domain.Interfaces.Repositories;
 using ProvaSiteware.Domain.Interfaces.Services;
 using ProvaSiteware.Domain.Services;
-using ProvaSiteware.Infra.Data.Context;
-using ProvaSiteware.Infra.Data.Repositories;
+
+using ProvaSiteware.Infra.Data.NHibernate.Session;
+using ProvaSiteware.Infra.Data.NHibernate.Repositories;
+
+//using ProvaSiteware.Infra.Data.Context;
+//using ProvaSiteware.Infra.Data.Repositories;
 
 namespace ProvaSiteware.Infra.IoC
 {
@@ -13,7 +17,9 @@ namespace ProvaSiteware.Infra.IoC
     {
         public override void Load()
         {
-            Bind<ContextManager>().ToSelf();
+            //Bind<ContextManager>().ToSelf();
+            Bind<SessionManager>().ToSelf();
+
             Bind<IUnitOfWork>().To<UnitOfWork>();
 
             Bind<IProdutoAppService>().To<ProdutoAppService>();

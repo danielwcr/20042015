@@ -1,4 +1,6 @@
-﻿using ProvaSiteware.Application.Interfaces;
+﻿using Microsoft.Practices.ServiceLocation;
+using ProvaSiteware.Application.Interfaces;
+using ProvaSiteware.Domain.Interfaces.Repositories;
 using ProvaSiteware.Domain.Interfaces.Services;
 using System;
 using System.Collections.Generic;
@@ -8,43 +10,15 @@ using System.Threading.Tasks;
 
 namespace ProvaSiteware.Application
 {
-    public class AppServiceBase<T> : IAppServiceBase<T> where T : class
+    public abstract class AppServiceBase
     {
-        private readonly IServiceBase<T> service;
-
-        public AppServiceBase(IServiceBase<T> service)
+        public IUnitOfWork BeginTransaction()
         {
-            this.service = service;
-        }
+            var unitOfWork = ServiceLocator.Current.GetInstance<IUnitOfWork>();
 
-        public void Insert(T obj)
-        {
-            service.Insert(obj);
-        }
+            unitOfWork.BeginTransaction();
 
-        public T Get(int id)
-        {
-            return service.Get(id);
-        }
-
-        public IEnumerable<T> GetAll()
-        {
-            return service.GetAll();
-        }
-
-        public void Update(T obj)
-        {
-            service.Update(obj);
-        }
-
-        public void Delete(T obj)
-        {
-            service.Delete(obj);
-        }
-
-        public void BeginTransaction()
-        {
-
+            return unitOfWork;
         }
     }
 }

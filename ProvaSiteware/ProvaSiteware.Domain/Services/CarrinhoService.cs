@@ -18,9 +18,7 @@ namespace ProvaSiteware.Domain.Services
 
         public Carrinho AtualizarItensCarrinho(Carrinho carrinho)
         {
-            // Atualiza todos os produtos do carrinho
-            foreach (var item in carrinho.ItensCarrinho)
-                item.Produto = repository.Get(item.CodigoProduto);
+            AtualizarProdutosDoCarrinho(carrinho);
 
             carrinho.AtualizarItensCarrinho();
 
@@ -29,9 +27,7 @@ namespace ProvaSiteware.Domain.Services
 
         public Carrinho AdicionarItemCarrinho(Carrinho carrinho, int codigoProduto)
         {
-            // Atualiza todos os produtos do carrinho
-            foreach (var item in carrinho.ItensCarrinho)
-                item.Produto = repository.Get(item.CodigoProduto);
+            AtualizarProdutosDoCarrinho(carrinho);
 
             carrinho.AdicionarProduto(repository.Get(codigoProduto));
 
@@ -40,13 +36,17 @@ namespace ProvaSiteware.Domain.Services
 
         public Carrinho RemoverItemCarrinho(Carrinho carrinho, int codigoProduto)
         {
-            // Atualiza todos os produtos do carrinho
-            foreach (var item in carrinho.ItensCarrinho)
-                item.Produto = repository.Get(item.CodigoProduto);
+            AtualizarProdutosDoCarrinho(carrinho);
 
             carrinho.RemoverProduto(codigoProduto);
 
             return carrinho;
+        }
+
+        private void AtualizarProdutosDoCarrinho(Carrinho carrinho)
+        {
+            foreach (var item in carrinho.ItensCarrinho)
+                item.Produto = repository.Get(item.CodigoProduto);
         }
     }
 }

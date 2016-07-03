@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace ProvaSiteware.Application.Interfaces
 {
-    public interface IAppServiceBase<T> where T : class 
+    public interface IAppEntityServiceBase<T> where T : class
     {
         void Insert(T obj);
 
@@ -17,5 +17,6 @@ namespace ProvaSiteware.Application.Interfaces
         void Update(T obj);
 
         void Delete(T obj);
+
     }
 }

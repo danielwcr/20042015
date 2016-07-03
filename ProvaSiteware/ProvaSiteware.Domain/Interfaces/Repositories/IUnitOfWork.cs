@@ -6,10 +6,10 @@ using System.Threading.Tasks;
 
 namespace ProvaSiteware.Domain.Interfaces.Repositories
 {
-    public interface IUnitOfWork
+    public interface IUnitOfWork : IDisposable
     {
         void BeginTransaction();
-
         void Commit();
+        void Rollback();
     }
 }
