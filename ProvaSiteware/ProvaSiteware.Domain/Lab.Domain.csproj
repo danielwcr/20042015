@@ -7,8 +7,8 @@
     <ProjectGuid>{D9219F5C-06EB-41B8-964F-387353362D29}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>ProvaSiteware.Domain</RootNamespace>
-    <AssemblyName>ProvaSiteware.Domain</AssemblyName>
+    <RootNamespace>Lab.Domain</RootNamespace>
+    <AssemblyName>Lab.Domain</AssemblyName>
     <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <TargetFrameworkProfile />

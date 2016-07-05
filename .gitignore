@@ -787,3 +787,8 @@ ProvaSiteware/ProvaSiteware.Infra.CrossCutting.IoC/obj/Debug/ProvaSiteware.Infra
 /ProvaSiteware/ProvaSiteware.Infra.IoC/obj/Debug
 /ProvaSiteware/ProvaSiteware.MVC/bin
 /ProvaSiteware/ProvaSiteware.Application/bin/Debug
+/ProvaSiteware/ProvaSiteware.Application/obj/Debug
+/ProvaSiteware/ProvaSiteware.Domain/bin/Debug
+/ProvaSiteware/ProvaSiteware.Domain/obj/Debug
+/ProvaSiteware/ProvaSiteware.Infra.Data/obj/Debug
+/ProvaSiteware/ProvaSiteware.MVC/obj/Debug

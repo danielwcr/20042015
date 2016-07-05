@@ -6,7 +6,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Web;
 
-namespace ProvaSiteware.Infra.Data.NHibernate.Session
+namespace Lab.Infra.Data.NH.Session
 {
     public class SessionManager
     {

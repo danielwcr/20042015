@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ProvaSiteware.Application.Interfaces
+namespace Lab.Application.Interfaces
 {
     public interface IAppEntityServiceBase<T> where T : class
     {

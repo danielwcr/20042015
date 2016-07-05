@@ -4,7 +4,7 @@ using CommonServiceLocator.NinjectAdapter.Unofficial;
 using Microsoft.Practices.ServiceLocation;
 using Ninject;
 
-namespace ProvaSiteware.Infra.IoC
+namespace Lab.Infra.CrossCutting.IoC
 {
     public class IoC
     {

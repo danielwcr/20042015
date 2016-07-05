@@ -1,14 +1,14 @@
 ﻿using Microsoft.Practices.ServiceLocation;
-using ProvaSiteware.Application.Interfaces;
-using ProvaSiteware.Domain.Interfaces.Repositories;
-using ProvaSiteware.Domain.Interfaces.Services;
+using Lab.Application.Interfaces;
+using Lab.Domain.Interfaces.Repositories;
+using Lab.Domain.Interfaces.Services;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ProvaSiteware.Application
+namespace Lab.Application
 {
     public abstract class AppServiceBase
     {

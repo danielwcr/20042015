@@ -1,17 +1,16 @@
 ﻿using Ninject.Modules;
-using ProvaSiteware.Application;
-using ProvaSiteware.Application.Interfaces;
-using ProvaSiteware.Domain.Interfaces.Repositories;
-using ProvaSiteware.Domain.Interfaces.Services;
-using ProvaSiteware.Domain.Services;
+using Lab.Application;
+using Lab.Application.Interfaces;
+using Lab.Domain.Interfaces.Repositories;
+using Lab.Domain.Interfaces.Services;
+using Lab.Domain.Services;
+using Lab.Infra.Data.NH.Session;
+using Lab.Infra.Data.NH.Repositories;
 
-using ProvaSiteware.Infra.Data.NHibernate.Session;
-using ProvaSiteware.Infra.Data.NHibernate.Repositories;
+//using Lab.Infra.Data.EF.Context;
+//using Lab.Infra.Data.EF.Repositories;
 
-//using ProvaSiteware.Infra.Data.Context;
-//using ProvaSiteware.Infra.Data.Repositories;
-
-namespace ProvaSiteware.Infra.IoC
+namespace Lab.Infra.CrossCutting.IoC
 {
     public class IoCModule : NinjectModule
     {

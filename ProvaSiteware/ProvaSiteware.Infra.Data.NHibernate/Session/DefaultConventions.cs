@@ -1,7 +1,7 @@
 ﻿using FluentNHibernate.Conventions;
 using FluentNHibernate.Conventions.Instances;
 
-namespace ProvaSiteware.Infra.Data.NHibernate.Session
+namespace Lab.Infra.Data.NH.Session
 {
     public class DefaultConventions : IPropertyConvention
     {

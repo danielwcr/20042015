@@ -4,10 +4,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using FluentNHibernate.Mapping;
-using ProvaSiteware.Domain.Entities;
-using ProvaSiteware.Domain.Common;
+using Lab.Domain.Entities;
+using Lab.Domain.Common;
 
-namespace ProvaSiteware.Infra.Data.NHibernate.Mapping
+namespace Lab.Infra.Data.NH.Mapping
 {
     public class ProdutoMap : ClassMap<Produto>
     {

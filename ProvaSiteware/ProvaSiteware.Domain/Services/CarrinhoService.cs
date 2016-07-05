@@ -1,11 +1,11 @@
-﻿using ProvaSiteware.Domain.Entities;
-using ProvaSiteware.Domain.Interfaces.Repositories;
-using ProvaSiteware.Domain.Interfaces.Services;
+﻿using Lab.Domain.Entities;
+using Lab.Domain.Interfaces.Repositories;
+using Lab.Domain.Interfaces.Services;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 
-namespace ProvaSiteware.Domain.Services
+namespace Lab.Domain.Services
 {
     public class CarrinhoService : ICarrinhoService
     {

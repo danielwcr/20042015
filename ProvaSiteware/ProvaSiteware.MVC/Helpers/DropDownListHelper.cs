@@ -6,10 +6,10 @@ using System.Web;
 using System.Web.Mvc;
 using System.Web.Mvc.Html;
 using System.ComponentModel;
-using ProvaSiteware.Domain.Common.Helpers;
+using Lab.Domain.Common.Helpers;
 using System.Linq.Expressions;
 
-namespace ProvaSiteware.MVC.Helpers
+namespace Lab.Presentation.MVC.Helpers
 {
     public static class DropDownListHelper
     {

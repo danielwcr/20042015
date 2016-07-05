@@ -1,11 +1,11 @@
-﻿using ProvaSiteware.Domain.Common;
+﻿using Lab.Domain.Common;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Web;
 
-namespace ProvaSiteware.MVC.ViewModels
+namespace Lab.Presentation.MVC.ViewModels
 {
     public class PromocaoViewModel
     {

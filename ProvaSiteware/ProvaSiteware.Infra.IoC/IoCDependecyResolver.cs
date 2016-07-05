@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Web.Mvc;
 
-namespace ProvaSiteware.Infra.IoC
+namespace Lab.Infra.CrossCutting.IoC
 {
     public class IoCDependencyResolver : IDependencyResolver
     {

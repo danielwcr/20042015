@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ProvaSiteware.Domain.Interfaces.Repositories
+namespace Lab.Domain.Interfaces.Repositories
 {
     public interface IRepositoryBase<T> where T : class 
     {

@@ -1,11 +1,11 @@
-﻿using ProvaSiteware.Domain.Entities;
+﻿using Lab.Domain.Entities;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Data.Entity.ModelConfiguration;
 
-namespace ProvaSiteware.Infra.Data.EntityConfig
+namespace Lab.Infra.Data.EF.EntityConfig
 {
     public class ProdutoConfiguration : EntityTypeConfiguration<Produto>
     {

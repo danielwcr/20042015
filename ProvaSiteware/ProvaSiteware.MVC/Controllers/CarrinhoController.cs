@@ -1,14 +1,14 @@
 ﻿using AutoMapper;
-using ProvaSiteware.Application.Interfaces;
-using ProvaSiteware.Domain.Entities;
-using ProvaSiteware.MVC.ViewModels;
+using Lab.Application.Interfaces;
+using Lab.Domain.Entities;
+using Lab.Presentation.MVC.ViewModels;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 
-namespace ProvaSiteware.MVC.Controllers
+namespace Lab.Presentation.MVC.Controllers
 {
     public class CarrinhoController : Controller
     {

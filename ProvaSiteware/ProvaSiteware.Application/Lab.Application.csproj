@@ -7,8 +7,8 @@
     <ProjectGuid>{3267C211-17EE-4DB3-A882-CCFF775AE878}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>ProvaSiteware.Application</RootNamespace>
-    <AssemblyName>ProvaSiteware.Application</AssemblyName>
+    <RootNamespace>Lab.Application</RootNamespace>
+    <AssemblyName>Lab.Application</AssemblyName>
     <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <TargetFrameworkProfile />
@@ -54,9 +54,9 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\ProvaSiteware.Domain\ProvaSiteware.Domain.csproj">
+    <ProjectReference Include="..\ProvaSiteware.Domain\Lab.Domain.csproj">
       <Project>{d9219f5c-06eb-41b8-964f-387353362d29}</Project>
-      <Name>ProvaSiteware.Domain</Name>
+      <Name>Lab.Domain</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>

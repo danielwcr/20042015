@@ -1,12 +1,12 @@
-﻿using ProvaSiteware.Domain.Common;
-using ProvaSiteware.Domain.Common.Helpers;
+﻿using Lab.Domain.Common;
+using Lab.Domain.Common.Helpers;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ProvaSiteware.Domain.Entities
+namespace Lab.Domain.Entities
 {
     public abstract class Promocao
     {

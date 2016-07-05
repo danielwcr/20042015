@@ -1,6 +1,6 @@
 ﻿using Microsoft.Practices.ServiceLocation;
-using ProvaSiteware.Domain.Interfaces.Repositories;
-using ProvaSiteware.Infra.Data.Context;
+using Lab.Domain.Interfaces.Repositories;
+using Lab.Infra.Data.EF.Context;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -8,7 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Data.Entity;
 
-namespace ProvaSiteware.Infra.Data.Repositories
+namespace Lab.Infra.Data.EF.Repositories
 {
     public class UnitOfWork : IUnitOfWork
     {

@@ -7,8 +7,8 @@
     <ProjectGuid>{D6981B93-F7D1-498B-832A-7B8ADB0D7391}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>ProvaSiteware.Infra.IoC</RootNamespace>
-    <AssemblyName>ProvaSiteware.Infra.IoC</AssemblyName>
+    <RootNamespace>Lab.Infra.CrossCutting.IoC</RootNamespace>
+    <AssemblyName>Lab.Infra.CrossCutting.IoC</AssemblyName>
     <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <TargetFrameworkProfile />
@@ -88,21 +88,21 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\ProvaSiteware.Application\ProvaSiteware.Application.csproj">
+    <ProjectReference Include="..\ProvaSiteware.Application\Lab.Application.csproj">
       <Project>{3267c211-17ee-4db3-a882-ccff775ae878}</Project>
-      <Name>ProvaSiteware.Application</Name>
+      <Name>Lab.Application</Name>
     </ProjectReference>
-    <ProjectReference Include="..\ProvaSiteware.Domain\ProvaSiteware.Domain.csproj">
+    <ProjectReference Include="..\ProvaSiteware.Domain\Lab.Domain.csproj">
       <Project>{d9219f5c-06eb-41b8-964f-387353362d29}</Project>
-      <Name>ProvaSiteware.Domain</Name>
+      <Name>Lab.Domain</Name>
     </ProjectReference>
-    <ProjectReference Include="..\ProvaSiteware.Infra.Data.NHibernate\ProvaSiteware.Infra.Data.NHibernate.csproj">
+    <ProjectReference Include="..\ProvaSiteware.Infra.Data.NHibernate\Lab.Infra.Data.NH.csproj">
       <Project>{05bb7437-eddf-44ca-af38-be84f9808084}</Project>
-      <Name>ProvaSiteware.Infra.Data.NHibernate</Name>
+      <Name>Lab.Infra.Data.NH</Name>
     </ProjectReference>
-    <ProjectReference Include="..\ProvaSiteware.Infra.Data\ProvaSiteware.Infra.Data.csproj">
+    <ProjectReference Include="..\ProvaSiteware.Infra.Data\Lab.Infra.Data.EF.csproj">
       <Project>{96c740e2-f3e0-48ce-8dc0-51799b9db12e}</Project>
-      <Name>ProvaSiteware.Infra.Data</Name>
+      <Name>Lab.Infra.Data.EF</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>

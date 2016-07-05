@@ -1,6 +1,6 @@
 ﻿using Microsoft.Practices.ServiceLocation;
-using ProvaSiteware.Domain.Interfaces.Repositories;
-using ProvaSiteware.Infra.Data.Context;
+using Lab.Domain.Interfaces.Repositories;
+using Lab.Infra.Data.EF.Context;
 using System;
 using System.Collections.Generic;
 using System.Data.Entity;
@@ -8,7 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ProvaSiteware.Infra.Data.Repositories
+namespace Lab.Infra.Data.EF.Repositories
 {
     public class RepositoryBase<T> : IRepositoryBase<T> where T : class
     {

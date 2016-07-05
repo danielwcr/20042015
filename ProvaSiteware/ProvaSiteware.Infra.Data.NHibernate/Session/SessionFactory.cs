@@ -2,10 +2,10 @@
 using FluentNHibernate.Cfg.Db;
 using NHibernate;
 using NHibernate.Tool.hbm2ddl;
-using ProvaSiteware.Infra.Data.NHibernate.Mapping;
+using Lab.Infra.Data.NH.Mapping;
 
 
-namespace ProvaSiteware.Infra.Data.NHibernate.Session
+namespace Lab.Infra.Data.NH.Session
 {
     public class SessionFactory
     {
@@ -14,7 +14,7 @@ namespace ProvaSiteware.Infra.Data.NHibernate.Session
             return Fluently.Configure()
 
                 .Database(MsSqlConfiguration.MsSql2012
-                    .ConnectionString(p => p.FromConnectionStringWithKey("ProvaSitewareDBConnection"))
+                    .ConnectionString(p => p.FromConnectionStringWithKey("LabDBConnection"))
                     .ShowSql())
 
                 .Mappings(p => p.FluentMappings.AddFromAssemblyOf<ProdutoMap>()

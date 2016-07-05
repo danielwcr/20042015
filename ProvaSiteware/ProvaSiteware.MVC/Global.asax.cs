@@ -1,5 +1,5 @@
-﻿using ProvaSiteware.MVC.App_Start;
-using ProvaSiteware.MVC.AutoMapper;
+﻿using Lab.Presentation.MVC.App_Start;
+using Lab.Presentation.MVC.AutoMapper;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,7 +9,7 @@ using System.Web.Mvc;
 using System.Web.Optimization;
 using System.Web.Routing;
 
-namespace ProvaSiteware.MVC
+namespace Lab.Presentation.MVC
 {
     // Note: For instructions on enabling IIS6 or IIS7 classic mode, 
     // visit http://go.microsoft.com/?LinkId=9394801

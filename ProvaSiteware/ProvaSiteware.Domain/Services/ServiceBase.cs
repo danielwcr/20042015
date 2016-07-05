@@ -1,12 +1,12 @@
-﻿using ProvaSiteware.Domain.Interfaces.Repositories;
-using ProvaSiteware.Domain.Interfaces.Services;
+﻿using Lab.Domain.Interfaces.Repositories;
+using Lab.Domain.Interfaces.Services;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ProvaSiteware.Domain.Services
+namespace Lab.Domain.Services
 {
     public class ServiceBase<T> : IServiceBase<T> where T : class
     {

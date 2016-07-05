@@ -1,11 +1,11 @@
-﻿using ProvaSiteware.Domain.Common;
+﻿using Lab.Domain.Common;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ProvaSiteware.Domain.Entities
+namespace Lab.Domain.Entities
 {
     [PromocaoAttribute(TipoPromocao = TipoPromocao.PagueUmLeveDois)]
     public class PagueUmLeveDois : Promocao

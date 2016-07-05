@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ProvaSiteware.Domain.Common.Helpers
+namespace Lab.Domain.Common.Helpers
 {
     public static class EnumHelper
     {

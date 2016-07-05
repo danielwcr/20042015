@@ -1,7 +1,7 @@
 ﻿using System.Web;
 using System.Web.Mvc;
 
-namespace ProvaSiteware.MVC
+namespace Lab.Presentation.MVC
 {
     public class FilterConfig
     {

@@ -1,11 +1,11 @@
 ﻿using Microsoft.Practices.ServiceLocation;
 using NHibernate;
-using ProvaSiteware.Domain.Interfaces.Repositories;
-using ProvaSiteware.Infra.Data.NHibernate.Session;
+using Lab.Domain.Interfaces.Repositories;
+using Lab.Infra.Data.NH.Session;
 using System.Collections.Generic;
 using System.Linq;
 
-namespace ProvaSiteware.Infra.Data.NHibernate.Repositories
+namespace Lab.Infra.Data.NH.Repositories
 {
     public class RepositoryBase<T> : IRepositoryBase<T> where T : class
     {

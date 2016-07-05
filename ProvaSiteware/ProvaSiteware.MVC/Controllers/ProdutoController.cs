@@ -1,17 +1,17 @@
-﻿using ProvaSiteware.Domain.Services;
+﻿using Lab.Domain.Services;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
-using ProvaSiteware.MVC.ViewModels;
+using Lab.Presentation.MVC.ViewModels;
 using AutoMapper;
-using ProvaSiteware.Domain.Entities;
-using ProvaSiteware.Application.Interfaces;
-using ProvaSiteware.Domain.Common;
-using ProvaSiteware.Domain.Common.Helpers;
+using Lab.Domain.Entities;
+using Lab.Application.Interfaces;
+using Lab.Domain.Common;
+using Lab.Domain.Common.Helpers;
 
-namespace ProvaSiteware.MVC.Controllers
+namespace Lab.Presentation.MVC.Controllers
 {
     public class ProdutoController : Controller
     {

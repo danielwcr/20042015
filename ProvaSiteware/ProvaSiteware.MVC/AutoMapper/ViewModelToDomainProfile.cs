@@ -1,9 +1,9 @@
 ﻿using AutoMapper;
-using ProvaSiteware.Domain.Entities;
-using ProvaSiteware.MVC.ViewModels;
+using Lab.Domain.Entities;
+using Lab.Presentation.MVC.ViewModels;
 using System.Linq;
 
-namespace ProvaSiteware.MVC.AutoMapper
+namespace Lab.Presentation.MVC.AutoMapper
 {
     public class ViewModelToDomainProfile : Profile
     {

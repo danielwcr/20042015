@@ -1,6 +1,6 @@
 ﻿using AutoMapper;
 
-namespace ProvaSiteware.MVC.AutoMapper
+namespace Lab.Presentation.MVC.AutoMapper
 {
     public class AutoMapperConfig
     {

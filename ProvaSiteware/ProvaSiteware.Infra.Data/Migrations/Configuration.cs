@@ -1,18 +1,18 @@
-namespace ProvaSiteware.Infra.Data.Migrations
-{
-    using System;
-    using System.Data.Entity;
-    using System.Data.Entity.Migrations;
-    using System.Linq;
+using System;
+using System.Data.Entity;
+using System.Data.Entity.Migrations;
+using System.Linq;
 
-    internal sealed class Configuration : DbMigrationsConfiguration<ProvaSiteware.Infra.Data.Context.ProvaSitewareContext>
+namespace Lab.Infra.Data.EF.Migrations
+{
+    internal sealed class Configuration : DbMigrationsConfiguration<Lab.Infra.Data.EF.Context.LabContext>
     {
         public Configuration()
         {
             AutomaticMigrationsEnabled = true;
         }
 
-        protected override void Seed(ProvaSiteware.Infra.Data.Context.ProvaSitewareContext context)
+        protected override void Seed(Lab.Infra.Data.EF.Context.LabContext context)
         {
             //  This method will be called after migrating to the latest version.
 

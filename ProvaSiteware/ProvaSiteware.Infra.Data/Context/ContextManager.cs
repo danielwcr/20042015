@@ -6,7 +6,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Web;
 
-namespace ProvaSiteware.Infra.Data.Context
+namespace Lab.Infra.Data.EF.Context
 {
     public class ContextManager
     {
@@ -17,9 +17,9 @@ namespace ProvaSiteware.Infra.Data.Context
             get
             {
                 if (HttpContext.Current.Items[ContextKey] == null)
-                    HttpContext.Current.Items[ContextKey] = new ProvaSitewareContext();
+                    HttpContext.Current.Items[ContextKey] = new LabContext();
 
-                return (ProvaSitewareContext)HttpContext.Current.Items[ContextKey];
+                return (LabContext)HttpContext.Current.Items[ContextKey];
 
             }
         }

@@ -1,5 +1,5 @@
-﻿using ProvaSiteware.Domain.Entities;
-using ProvaSiteware.Infra.Data.EntityConfig;
+﻿using Lab.Domain.Entities;
+using Lab.Infra.Data.EF.EntityConfig;
 using System;
 using System.Collections.Generic;
 using System.Data.Entity;
@@ -8,13 +8,13 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ProvaSiteware.Infra.Data.Context
+namespace Lab.Infra.Data.EF.Context
 {
-    public class ProvaSitewareContext : DbContext
+    public class LabContext : DbContext
     {
         
-        public ProvaSitewareContext()
-            : base("ProvaSitewareDBConnection")
+        public LabContext()
+            : base("LabDBConnection")
         {
 
         }
