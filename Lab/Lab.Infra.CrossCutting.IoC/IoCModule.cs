@@ -4,11 +4,11 @@ using Lab.Application.Interfaces;
 using Lab.Domain.Interfaces.Repositories;
 using Lab.Domain.Interfaces.Services;
 using Lab.Domain.Services;
-using Lab.Infra.Data.NH.Session;
-using Lab.Infra.Data.NH.Repositories;
 
-//using Lab.Infra.Data.EF.Context;
-//using Lab.Infra.Data.EF.Repositories;
+//using Lab.Infra.Data.NH.Session;
+//using Lab.Infra.Data.NH.Repositories;
+using Lab.Infra.Data.EF.Context;
+using Lab.Infra.Data.EF.Repositories;
 
 namespace Lab.Infra.CrossCutting.IoC
 {
@@ -16,8 +16,8 @@ namespace Lab.Infra.CrossCutting.IoC
     {
         public override void Load()
         {
-            //Bind<ContextManager>().ToSelf();
-            Bind<SessionManager>().ToSelf();
+            Bind<ContextManager>().ToSelf();
+            //Bind<SessionManager>().ToSelf();
 
             Bind<IUnitOfWork>().To<UnitOfWork>();
 

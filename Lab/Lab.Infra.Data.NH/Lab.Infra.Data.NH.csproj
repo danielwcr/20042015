@@ -71,7 +71,7 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\ProvaSiteware.Domain\Lab.Domain.csproj">
+    <ProjectReference Include="..\Lab.Domain\Lab.Domain.csproj">
       <Project>{D9219F5C-06EB-41B8-964F-387353362D29}</Project>
       <Name>Lab.Domain</Name>
     </ProjectReference>

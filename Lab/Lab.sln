@@ -3,11 +3,11 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 14
 VisualStudioVersion = 14.0.25420.1
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Lab.Domain", "ProvaSiteware.Domain\Lab.Domain.csproj", "{D9219F5C-06EB-41B8-964F-387353362D29}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Lab.Domain", "Lab.Domain\Lab.Domain.csproj", "{D9219F5C-06EB-41B8-964F-387353362D29}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Lab.Presentation.MVC", "ProvaSiteware.MVC\Lab.Presentation.MVC.csproj", "{689AD2AA-8D73-48DE-A0E2-77E75DE7FE4B}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Lab.Presentation.MVC", "Lab.Presentation.MVC\Lab.Presentation.MVC.csproj", "{689AD2AA-8D73-48DE-A0E2-77E75DE7FE4B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Lab.Application", "ProvaSiteware.Application\Lab.Application.csproj", "{3267C211-17EE-4DB3-A882-CCFF775AE878}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Lab.Application", "Lab.Application\Lab.Application.csproj", "{3267C211-17EE-4DB3-A882-CCFF775AE878}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Presentation", "Presentation", "{1247B0C7-A2D6-404A-8F88-588DD94B09B1}"
 EndProject
@@ -17,11 +17,11 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Application", "Application"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Infra", "Infra", "{E00D0268-3DEC-4FE7-BF2D-50A9AB0ACAF9}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Lab.Infra.Data.EF", "ProvaSiteware.Infra.Data\Lab.Infra.Data.EF.csproj", "{96C740E2-F3E0-48CE-8DC0-51799B9DB12E}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Lab.Infra.Data.EF", "Lab.Infra.Data.EF\Lab.Infra.Data.EF.csproj", "{96C740E2-F3E0-48CE-8DC0-51799B9DB12E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Lab.Infra.Data.NH", "ProvaSiteware.Infra.Data.NHibernate\Lab.Infra.Data.NH.csproj", "{05BB7437-EDDF-44CA-AF38-BE84F9808084}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Lab.Infra.Data.NH", "Lab.Infra.Data.NH\Lab.Infra.Data.NH.csproj", "{05BB7437-EDDF-44CA-AF38-BE84F9808084}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Lab.Infra.CrossCutting.IoC", "ProvaSiteware.Infra.IoC\Lab.Infra.CrossCutting.IoC.csproj", "{D6981B93-F7D1-498B-832A-7B8ADB0D7391}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Lab.Infra.CrossCutting.IoC", "Lab.Infra.CrossCutting.IoC\Lab.Infra.CrossCutting.IoC.csproj", "{D6981B93-F7D1-498B-832A-7B8ADB0D7391}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "CrossCutting", "CrossCutting", "{213BB795-2E93-4AAB-BDD3-589D1849401B}"
 EndProject

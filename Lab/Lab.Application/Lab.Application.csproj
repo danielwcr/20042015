@@ -54,7 +54,7 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\ProvaSiteware.Domain\Lab.Domain.csproj">
+    <ProjectReference Include="..\Lab.Domain\Lab.Domain.csproj">
       <Project>{d9219f5c-06eb-41b8-964f-387353362d29}</Project>
       <Name>Lab.Domain</Name>
     </ProjectReference>
