@@ -33,7 +33,6 @@ namespace Lab.Domain.Entities
 
         private void CalcularPreco()
         {
-            // Se existir promoção aplicável, considera o cálculo dessa Promoção
             if (PromocaoAplicavel != null)
                 this.Preco = PromocaoAplicavel.CalcularPreco(Produto, Quantidade);
             else

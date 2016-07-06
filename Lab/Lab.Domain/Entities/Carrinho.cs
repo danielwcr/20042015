@@ -10,49 +10,48 @@ namespace Lab.Domain.Entities
     {
         public IList<ItemCarrinho> ItensCarrinho { get; set; }
 
+        public Carrinho()
+        {
+            ItensCarrinho = new List<ItemCarrinho>();
+        }
+
         public void AtualizarItensCarrinho()
         {
-            // Remove os itens que não existe mais produto (Caso de exclusão do produto)
             foreach (var itemSemProduto in this.ItensCarrinho.Where(p => p.Produto == null).ToList())
                 this.ItensCarrinho.Remove(itemSemProduto);
 
-            // Atualizar todos os itens do carrinho
             foreach (var item in this.ItensCarrinho)
                 item.Atualizar();
         }
 
-        public void AdicionarProduto(Produto produto)
+        public ItemCarrinho AdicionarProduto(Produto produto)
         {
-            if (produto == null)
-                return;
+            ItemCarrinho itemCarrinho = null;
 
-            // Procura por um item com o mesmo produto
-            var itemRepetido = this.ItensCarrinho.FirstOrDefault(p => p.CodigoProduto == produto.Codigo);
+            if (produto == null) return null;
 
-            // Se encontrar, adiciona uma unidade na quantidade
-            if (itemRepetido != null)
-                itemRepetido.Quantidade++;
-
-            // Se não encontrar, cria um item para o produto
+            itemCarrinho = this.ItensCarrinho.FirstOrDefault(p => p.CodigoProduto == produto.Codigo);
+            if (itemCarrinho != null)
+            {
+                itemCarrinho.Quantidade++;
+            }
             else
             {
-                var novoItem = new ItemCarrinho(produto);
-                this.ItensCarrinho.Add(novoItem);
+                itemCarrinho = new ItemCarrinho(produto);
+                this.ItensCarrinho.Add(itemCarrinho);
             }
 
-            // Atualiza todos os itens
             AtualizarItensCarrinho();
+
+            return itemCarrinho;
         }
 
-        internal void RemoverProduto(int codigoProduto)
+        public void RemoverProduto(int codigoProduto)
         {
-            // Identifica o item que será removido
             var item = this.ItensCarrinho.FirstOrDefault(p => p.CodigoProduto == codigoProduto);
 
-            // Remove o item com o produto informado
             this.ItensCarrinho.Remove(item);
 
-            // Atualiza todos os itens
             AtualizarItensCarrinho();
         }
     }

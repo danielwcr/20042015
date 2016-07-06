@@ -12,3 +12,6 @@
 /Lab/Lab.Domain/obj
 /Lab/Lab.Presentation.MVC/bin
 /Lab/Lab.Presentation.MVC/obj
+/Lab/Lab.Domain.Test/bin
+/Lab/Lab.Domain.Test/obj
+/Lab/TestResults

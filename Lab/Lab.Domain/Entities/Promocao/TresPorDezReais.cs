@@ -7,10 +7,10 @@ using System.Threading.Tasks;
 
 namespace Lab.Domain.Entities
 {
-    [PromocaoAttribute(TipoPromocao = TipoPromocao.TresPorDezReais)]
+    [Promocao(TipoPromocao = TipoPromocao.TresPorDezReais)]
     public class TresPorDezReais : Promocao
     {
-        const int QUANTIDADE_ITENS_BASE_CALCULO = 3;
+        private const int QuantidadeItensParaBaseDeCalculo = 3;
 
         public override decimal CalcularPreco(Produto produto, int quantidade)
         {
@@ -20,7 +20,7 @@ namespace Lab.Domain.Entities
             while (Aplicavel(quantidadeNaoProcessada))
             {
                 valor += 10;
-                quantidadeNaoProcessada -= QUANTIDADE_ITENS_BASE_CALCULO;
+                quantidadeNaoProcessada -= QuantidadeItensParaBaseDeCalculo;
             }
 
             valor += quantidadeNaoProcessada * produto.Preco;
@@ -30,7 +30,7 @@ namespace Lab.Domain.Entities
 
         public override bool Aplicavel(int quantidade)
         {
-            return quantidade >= QUANTIDADE_ITENS_BASE_CALCULO;
+            return quantidade >= QuantidadeItensParaBaseDeCalculo;
         }
     }
 }
