@@ -2,6 +2,9 @@
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Lab.Domain.Entities;
 using FluentAssertions;
+using System.Collections;
+using System.Collections.Generic;
+using System.Linq;
 
 namespace Lab.Domain.Test
 {
@@ -157,7 +160,6 @@ namespace Lab.Domain.Test
             //Assert
             preco.Should().Be(8);
         }
-
         #endregion
     }
 }

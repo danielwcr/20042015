@@ -1,0 +1,51 @@
+﻿@{
+    ViewBag.Title = "Lista de Produtos";
+}
+
+<div class="page-header">
+    <h2>Lista de Produtos</h2>
+</div>
+
+<div class="container" ng-app="app" ng-controller="ProdutoController">
+
+    {{produtos | json}}
+
+    <table class="table table-bordered table-striped">
+        <tr>
+            <th>
+                Nome
+            </th>
+            <th>
+                Preço
+            </th>
+            <th>
+                Promoção
+            </th>
+            <th></th>
+        </tr>
+        <tr ng-repeat="produto in produtos">
+            <td>
+                {{produto.Nome}}
+            </td>
+            <td>
+                {{produto.Preco}}
+            </td>
+            <td>
+                {{produto.Promocao.Nome}}
+            </td>
+            <td>
+                <a href="../Carrinho/Add?codigoProduto={{produto.Codigo}}">Adicionar ao Carrinho</a> |
+                <a href="Edit?id={{produto.Codigo}}">Editar</a> |
+                <a href="Delete?id={{produto.Codigo}}">Excluir</a>
+
+                @*@Html.ActionLink("Adicionar ao Carrinho", "Add", "Carrinho") |
+                    @Html.ActionLink("Editar", "Edit", new { id = item.Codigo }) |
+                    @Html.ActionLink("Excluir", "Delete", new { id = item.Codigo })*@
+            </td>
+        </tr>
+    </table>
+
+    <p>
+        @Html.ActionLink("Incluir produto", "Create", null, new { @class = "btn btn-default btn-cons" })
+    </p>
+</div>

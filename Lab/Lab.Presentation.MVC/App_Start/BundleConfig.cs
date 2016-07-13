@@ -47,6 +47,12 @@ namespace Lab.Presentation.MVC
                         "~/Content/themes/base/jquery.ui.datepicker.css",
                         "~/Content/themes/base/jquery.ui.progressbar.css",
                         "~/Content/themes/base/jquery.ui.theme.css"));
+
+            bundles.Add(new ScriptBundle("~/bundles/angular").Include(
+                       "~/Scripts/angular.js"));
+
+            bundles.Add(new ScriptBundle("~/bundles/app").IncludeDirectory(
+                       "~/App_Script/", "*.js", true));
         }
     }
 }

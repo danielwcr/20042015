@@ -1,0 +1,42 @@
+﻿@model Lab.Presentation.MVC.ViewModels.ProdutoViewModel
+
+@{
+    ViewBag.Title = "Exclusão de Produto";
+}
+
+<div class="page-header">
+    <h2>Exclusão de Produto</h2>
+</div>
+
+<h3>Deseja realmente excluir esse produto?</h3>
+
+<div class="row">
+    <div class="col-md-12">
+        @Html.LabelFor(model => model.Nome, new { @class = "form-label" })
+        @Html.DisplayFor(model => model.Nome)
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-md-12">
+        @Html.LabelFor(model => model.Preco, new { @class = "form-label" })
+        @Html.DisplayFor(model => model.Preco)
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-md-12">
+        @Html.LabelFor(model => model.Promocao.Nome, new { @class = "form-label" })
+        @Html.DisplayFor(model => model.Promocao.Nome)
+    </div>
+</div>
+
+<br />
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+    <p>
+        <input type="submit" value="Excluir" class="btn btn-danger btn-cons" />
+        @Html.ActionLink("Cancelar", "Index", null, new { @class = "btn btn-default btn-cons" })
+    </p>
+}

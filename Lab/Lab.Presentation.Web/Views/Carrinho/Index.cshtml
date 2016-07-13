@@ -1,0 +1,78 @@
+﻿@model IEnumerable<Lab.Presentation.MVC.ViewModels.ItemCarrinhoViewModel>
+
+@{
+    ViewBag.Title = "Carrinho";
+}
+
+<div class="page-header">
+    <h2>Carrinho</h2>
+</div>
+
+@using (Html.BeginForm("Refresh", "Carrinho", FormMethod.Post))
+{
+    @Html.ValidationSummary(true)
+
+    <table class="table table-bordered table-striped">
+        <tr>
+            <th>Item
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Quantidade)
+            </th>
+            <th>Preço unitário
+            </th>
+            <th>Preço total
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.PromocaoAplicavel.Nome)
+            </th>
+            <th></th>
+        </tr>
+
+        @for (int i = 0; i < Model.Count(); i++)
+        {
+            var item = Model.ElementAt(i);
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Produto.Nome)
+                    @Html.Hidden("[" + i + "].Produto.Nome", item.Produto.Nome)
+
+                </td>
+                <td>
+                    @Html.TextBox("[" + i + "].Quantidade", item.Quantidade, new { @class = "form-control input-sm" })
+                    @Html.ValidationMessage("[" + i + "].Quantidade", new { @class = "error" })
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Produto.Preco)
+                    @Html.Hidden("[" + i + "].Produto.Preco", item.Produto.Preco)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Preco)
+                    @Html.Hidden("[" + i + "].Preco", item.Preco)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.PromocaoAplicavel.Nome)
+                    @Html.Hidden("[" + i + "].PromocaoAplicavel.Nome", item.PromocaoAplicavel == null ? string.Empty : item.PromocaoAplicavel.Nome)
+                </td>
+                <td>
+                    @Html.ActionLink("Remover", "Remove", new { codigoProduto = item.CodigoProduto })
+                    @Html.Hidden("[" + i + "].CodigoProduto", item.CodigoProduto)
+                </td>
+            </tr>
+        }
+        <tr>
+            <td></td>
+            <td></td>
+            <td><b>Total</b></td>
+            <td>
+                <b>@Model.Sum(p => p.Preco).ToString("C")</b>
+            </td>
+            <td></td>
+            <td></td>
+        </tr>
+    </table>
+    
+    <p>
+        <input type="submit" value="Atualizar" class="btn btn-primary btn-cons" />
+    </p>
+}

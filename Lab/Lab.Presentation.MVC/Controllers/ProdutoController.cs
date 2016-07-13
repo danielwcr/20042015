@@ -28,6 +28,17 @@ namespace Lab.Presentation.MVC.Controllers
             return View(Mapper.Map<IEnumerable<ProdutoViewModel>>(produtos));
         }
 
+        public ActionResult IndexAngular()
+        {
+            return View();
+        }
+
+        public ActionResult ObterProdutos()
+        {
+            var produtos = produtoApp.GetAll();
+            return Json(Mapper.Map<IEnumerable<ProdutoViewModel>>(produtos), JsonRequestBehavior.AllowGet);
+        }
+
         public ActionResult Details(int id)
         {
             var produto = produtoApp.Get(id);

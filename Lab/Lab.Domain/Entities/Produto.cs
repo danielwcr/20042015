@@ -21,7 +21,7 @@ namespace Lab.Domain.Entities
             get
             {
                 if (promocao == null)
-                    promocao = Entities.Promocao.Obter(TipoPromocao);
+                    promocao = Promocao.Obter(TipoPromocao);
 
                 return promocao;
             }
