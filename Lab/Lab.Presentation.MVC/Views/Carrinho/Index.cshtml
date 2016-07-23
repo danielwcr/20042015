@@ -1,11 +1,11 @@
 ﻿@model IEnumerable<Lab.Presentation.MVC.ViewModels.ItemCarrinhoViewModel>
 
 @{
-    ViewBag.Title = "Carrinho";
+    ViewBag.Title = Resource.Carrinho;
 }
 
 <div class="page-header">
-    <h2>Carrinho</h2>
+    <h2>@Resource.Carrinho</h2>
 </div>
 
 @using (Html.BeginForm("Refresh", "Carrinho", FormMethod.Post))
@@ -19,9 +19,9 @@
             <th>
                 @Html.DisplayNameFor(model => model.Quantidade)
             </th>
-            <th>Preço unitário
+            <th>@Html.DisplayNameFor(model => model.Preco)
             </th>
-            <th>Preço total
+            <th>@Resource.Total
             </th>
             <th>
                 @Html.DisplayNameFor(model => model.PromocaoAplicavel.Nome)
@@ -55,7 +55,7 @@
                     @Html.Hidden("[" + i + "].PromocaoAplicavel.Nome", item.PromocaoAplicavel == null ? string.Empty : item.PromocaoAplicavel.Nome)
                 </td>
                 <td>
-                    @Html.ActionLink("Remover", "Remove", new { codigoProduto = item.CodigoProduto })
+                    @Html.ActionLink(Resource.Remover, "Remove", new { codigoProduto = item.CodigoProduto })
                     @Html.Hidden("[" + i + "].CodigoProduto", item.CodigoProduto)
                 </td>
             </tr>
@@ -63,7 +63,7 @@
         <tr>
             <td></td>
             <td></td>
-            <td><b>Total</b></td>
+            <td><b>@Resource.Subtotal</b></td>
             <td>
                 <b>@Model.Sum(p => p.Preco).ToString("C")</b>
             </td>
@@ -73,6 +73,6 @@
     </table>
     
     <p>
-        <input type="submit" value="Atualizar" class="btn btn-primary btn-cons" />
+        <input type="submit" value="@Resource.Atualizar" class="btn btn-primary btn-cons" />
     </p>
 }

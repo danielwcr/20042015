@@ -6,8 +6,8 @@ using System.Web;
 using System.Web.Mvc;
 using System.Web.Mvc.Html;
 using System.ComponentModel;
-using Lab.Domain.Common.Helpers;
 using System.Linq.Expressions;
+using Lab.Resources;
 
 namespace Lab.Presentation.MVC.Helpers
 {
@@ -18,16 +18,15 @@ namespace Lab.Presentation.MVC.Helpers
             var metadata = ModelMetadata.FromLambdaExpression(expression, htmlHelper.ViewData);
             var values = Enum.GetValues(typeof(TEnum)).Cast<TEnum>();
 
-            var items =
-                values.Select(
-                   value =>
-                   new SelectListItem
-                   {
-                       Text = EnumHelper.GetEnumDescription(value),
-                       Value = value.ToString(),
-                       Selected = value.Equals(metadata.Model)
-                   });
+            var items = values.Select(p => new SelectListItem
+            {
+                Text = Resource.ResourceManager.GetString(p.ToString()),
+                Value = p.ToString(),
+                Selected = p.Equals(metadata.Model)
+            });
+
             var attributes = HtmlHelper.AnonymousObjectToHtmlAttributes(htmlAttributes);
+
             return htmlHelper.DropDownListFor(expression, items, optionLabel, attributes);
         }
     }

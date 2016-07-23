@@ -1,10 +1,8 @@
 ﻿using Lab.Domain.Common;
-using Lab.Domain.Common.Helpers;
+using Lab.Resources;
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Lab.Domain.Entities
 {
@@ -30,7 +28,7 @@ namespace Lab.Domain.Entities
 
         public string Nome
         {
-            get { return EnumHelper.GetEnumDescription(TipoPromocao); }
+            get { return Resource.ResourceManager.GetString(TipoPromocao.ToString()); }
         }
 
         public static Promocao Obter(TipoPromocao? tipoPromocao)

@@ -11,19 +11,19 @@ namespace Lab.Presentation.MVC.AutoMapper
             get { return "DomainToViewModelProfile"; }
         }
 
-        protected override void Configure()
+        public DomainToViewModelProfile()
         {
-            Mapper.CreateMap<Produto, ProdutoViewModel>();
+            CreateMap<Produto, ProdutoViewModel>();
 
-            Mapper.CreateMap<Carrinho, CarrinhoViewModel>();
-            Mapper.CreateMap<ItemCarrinho, ItemCarrinhoViewModel>();
+            CreateMap<Carrinho, CarrinhoViewModel>();
+            CreateMap<ItemCarrinho, ItemCarrinhoViewModel>();
 
-            Mapper.CreateMap<Promocao, PromocaoViewModel>()
+            CreateMap<Promocao, PromocaoViewModel>()
                 .Include<TresPorDezReais, PromocaoViewModel>()
                 .Include<PagueUmLeveDois, PromocaoViewModel>();
 
-            Mapper.CreateMap<TresPorDezReais, PromocaoViewModel>();
-            Mapper.CreateMap<PagueUmLeveDois, PromocaoViewModel>();
+            CreateMap<TresPorDezReais, PromocaoViewModel>();
+            CreateMap<PagueUmLeveDois, PromocaoViewModel>();
         }
     }
 }

@@ -15,11 +15,18 @@ namespace Lab.Presentation.MVC
                         "~/Scripts/jquery-ui-{version}.js"));
 
             bundles.Add(new ScriptBundle("~/bundles/jqueryval").Include(
+                        "~/Scripts/globalize.js",
+                        "~/Scripts/cldr.js",
                         "~/Scripts/jquery.validate.js",
-                        "~/Scripts/jquery.validate.unobtrusive.js",
-                        "~/Scripts/globalize/globalize.js",
-                        "~/Scripts/globalize/cultures/globalize.culture.pt-BR.js",
-                        "~/Scripts/methods_pt.js"));
+                        "~/Scripts/jquery.validate.unobtrusive.js"
+                        //,                        "~/Scripts/jquery.validate.globalize.js"
+                        
+                        )
+                        .IncludeDirectory("~/Scripts/cldr/", "*.js", true)
+                        .IncludeDirectory("~/Scripts/globalize/", "*.js", true)
+                        
+                        
+                        );
 
             // Use the development version of Modernizr to develop with and learn from. Then, when you're
             // ready for production, use the build tool at http://modernizr.com to pick only the tests you need.
@@ -33,20 +40,6 @@ namespace Lab.Presentation.MVC
                         "~/Content/site.css",
                         "~/Content/bootstrap.css",
                         "~/Content/bootstrap-theme.css"));
-
-            bundles.Add(new StyleBundle("~/Content/themes/base/css").Include(
-                        "~/Content/themes/base/jquery.ui.core.css",
-                        "~/Content/themes/base/jquery.ui.resizable.css",
-                        "~/Content/themes/base/jquery.ui.selectable.css",
-                        "~/Content/themes/base/jquery.ui.accordion.css",
-                        "~/Content/themes/base/jquery.ui.autocomplete.css",
-                        "~/Content/themes/base/jquery.ui.button.css",
-                        "~/Content/themes/base/jquery.ui.dialog.css",
-                        "~/Content/themes/base/jquery.ui.slider.css",
-                        "~/Content/themes/base/jquery.ui.tabs.css",
-                        "~/Content/themes/base/jquery.ui.datepicker.css",
-                        "~/Content/themes/base/jquery.ui.progressbar.css",
-                        "~/Content/themes/base/jquery.ui.theme.css"));
 
             bundles.Add(new ScriptBundle("~/bundles/angular").Include(
                        "~/Scripts/angular.js"));

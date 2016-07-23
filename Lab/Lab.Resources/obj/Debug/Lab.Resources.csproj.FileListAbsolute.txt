@@ -1,0 +1,10 @@
+C:\Users\Daniel\Projects\lab\Lab\Lab.Resources\bin\Debug\Lab.Resources.dll
+C:\Users\Daniel\Projects\lab\Lab\Lab.Resources\bin\Debug\Lab.Resources.pdb
+C:\Users\Daniel\Projects\lab\Lab\Lab.Resources\bin\Debug\en\Lab.Resources.resources.dll
+C:\Users\Daniel\Projects\lab\Lab\Lab.Resources\obj\Debug\Lab.Resources.csprojResolveAssemblyReference.cache
+C:\Users\Daniel\Projects\lab\Lab\Lab.Resources\obj\Debug\Lab.Resources.Resource.resources
+C:\Users\Daniel\Projects\lab\Lab\Lab.Resources\obj\Debug\Lab.Resources.Resource.en.resources
+C:\Users\Daniel\Projects\lab\Lab\Lab.Resources\obj\Debug\Lab.Resources.csproj.GenerateResource.Cache
+C:\Users\Daniel\Projects\lab\Lab\Lab.Resources\obj\Debug\en\Lab.Resources.resources.dll
+C:\Users\Daniel\Projects\lab\Lab\Lab.Resources\obj\Debug\Lab.Resources.dll
+C:\Users\Daniel\Projects\lab\Lab\Lab.Resources\obj\Debug\Lab.Resources.pdb

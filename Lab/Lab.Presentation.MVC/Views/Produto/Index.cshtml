@@ -1,11 +1,11 @@
 ﻿@model IEnumerable<Lab.Presentation.MVC.ViewModels.ProdutoViewModel>
 
 @{
-    ViewBag.Title = "Lista de Produtos";
+    ViewBag.Title = string.Format(Resource.ListaDeX, Resource.Produtos);
 }
 
 <div class="page-header">
-    <h2>Lista de Produtos</h2>
+    <h2>@string.Format(Resource.ListaDeX, Resource.Produtos)</h2>
 </div>
 
 <table class="table table-bordered table-striped">
@@ -35,9 +35,9 @@
                 @Html.DisplayFor(modelItem => item.Promocao.Nome)
             </td>
             <td>
-                @Html.ActionLink("Adicionar ao Carrinho", "Add", "Carrinho", new { codigoProduto = item.Codigo }, null) |
-                @Html.ActionLink("Editar", "Edit", new { id = item.Codigo }) |
-                @Html.ActionLink("Excluir", "Delete", new { id = item.Codigo })
+                @Html.ActionLink(Resource.AdicionarAoCarrinho, "Add", "Carrinho", new { codigoProduto = item.Codigo }, null) |
+                @Html.ActionLink(Resource.Editar, "Edit", new { id = item.Codigo }) |
+                @Html.ActionLink(Resource.Excluir, "Delete", new { id = item.Codigo })
             </td>
         </tr>
     }
@@ -45,5 +45,5 @@
 </table>
 
 <p>
-    @Html.ActionLink("Incluir produto", "Create", null, new { @class = "btn btn-default btn-cons" })
+    @Html.ActionLink(string.Format(Resource.IncluirX, Resource.Produto), "Create", null, new { @class = "btn btn-default btn-cons" })
 </p>

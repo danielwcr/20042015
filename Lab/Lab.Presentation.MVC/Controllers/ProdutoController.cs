@@ -1,15 +1,10 @@
-﻿using Lab.Domain.Services;
-using System;
+﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Web;
 using System.Web.Mvc;
 using Lab.Presentation.MVC.ViewModels;
 using AutoMapper;
 using Lab.Domain.Entities;
 using Lab.Application.Interfaces;
-using Lab.Domain.Common;
-using Lab.Domain.Common.Helpers;
 
 namespace Lab.Presentation.MVC.Controllers
 {

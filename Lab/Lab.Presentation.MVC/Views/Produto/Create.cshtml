@@ -3,11 +3,11 @@
 @using Lab.Presentation.MVC.Helpers
 
 @{
-    ViewBag.Title = "Inclusão de Produto";
+    ViewBag.Title = string.Format(Resource.InclusaoDeX, Resource.Produto);
 }
 
 <div class="page-header">
-    <h2>Inclusão de Produto</h2>
+    <h2>@string.Format(Resource.InclusaoDeX, Resource.Produto)</h2>
 </div>
 
 @using (Html.BeginForm())
@@ -46,7 +46,7 @@
     </div>
 
     <p>
-        <input type="submit" value="Salvar" class="btn btn-success btn-cons" />
-        @Html.ActionLink("Cancelar", "Index", null, new { @class = "btn btn-default btn-cons" })
+        <input type="submit" value="@Resource.Salvar" class="btn btn-success btn-cons" />
+        @Html.ActionLink(Resource.Cancelar, "Index", null, new { @class = "btn btn-default btn-cons" })
     </p>
 }

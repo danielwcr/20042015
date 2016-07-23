@@ -42,9 +42,8 @@ namespace Lab.Domain.Entities
         private void IdentificarPromocao()
         {
             if (Produto == null)
-                throw new InvalidOperationException("Não é possível calcular ItemCarrinho sem o produto configurado");
+                throw new InvalidOperationException();
 
-            // O verifica se a promoção configurada no produto é aplicável
             if (Produto.Promocao != null && Produto.Promocao.Aplicavel(Quantidade))
                 this.PromocaoAplicavel = Produto.Promocao;
             else

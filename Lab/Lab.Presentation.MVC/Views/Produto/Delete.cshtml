@@ -1,11 +1,11 @@
 ﻿@model Lab.Presentation.MVC.ViewModels.ProdutoViewModel
 
 @{
-    ViewBag.Title = "Exclusão de Produto";
+    ViewBag.Title = string.Format(Resource.ExclusaoDeX, Resource.Produto);
 }
 
 <div class="page-header">
-    <h2>Exclusão de Produto</h2>
+    <h2>@string.Format(Resource.ExclusaoDeX, Resource.Produto)</h2>
 </div>
 
 <h3>Deseja realmente excluir esse produto?</h3>
@@ -36,7 +36,7 @@
 {
     @Html.AntiForgeryToken()
     <p>
-        <input type="submit" value="Excluir" class="btn btn-danger btn-cons" />
-        @Html.ActionLink("Cancelar", "Index", null, new { @class = "btn btn-default btn-cons" })
+        <input type="submit" value="@Resource.Excluir" class="btn btn-danger btn-cons" />
+        @Html.ActionLink(Resource.Cancelar, "Index", null, new { @class = "btn btn-default btn-cons" })
     </p>
 }

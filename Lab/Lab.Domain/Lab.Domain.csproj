@@ -32,13 +32,15 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.EnterpriseServices" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Common\Enumeradores.cs" />
     <Compile Include="Common\PromocaoAttribute.cs" />
-    <Compile Include="Common\Helpers\EnumHelper.cs" />
     <Compile Include="Entities\Carrinho.cs" />
+    <Compile Include="Entities\EntityBase.cs" />
+    <Compile Include="Interfaces\Entities\IEntityBase.cs" />
     <Compile Include="Entities\Promocao\PagueUmLeveDois.cs" />
     <Compile Include="Entities\Promocao\TresPorDezReais.cs" />
     <Compile Include="Entities\Promocao\Promocao.cs" />
@@ -55,7 +57,12 @@
     <Compile Include="Services\ProdutoService.cs" />
     <Compile Include="Services\ServiceBase.cs" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <ProjectReference Include="..\Lab.Resources\Lab.Resources.csproj">
+      <Project>{ea2e7b4c-a080-4e91-a5db-07780592b45e}</Project>
+      <Name>Lab.Resources</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

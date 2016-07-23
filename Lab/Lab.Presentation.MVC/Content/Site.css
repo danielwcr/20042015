@@ -30,3 +30,19 @@
     display: none;
 }
 
+.nav > li > div.culture {
+    position: relative;
+    display: block;
+    padding: 15px;
+    color: #9d9d9d;
+}
+
+.nav > li > div.culture > a {
+    color: #9d9d9d;
+}
+
+.nav > li > div.culture > a:hover,
+.nav > li > div.culture > a:focus {
+  text-decoration: none;
+  color: #eee;
+}

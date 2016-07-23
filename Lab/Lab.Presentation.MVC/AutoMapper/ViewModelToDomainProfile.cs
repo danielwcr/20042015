@@ -1,7 +1,6 @@
 ﻿using AutoMapper;
 using Lab.Domain.Entities;
 using Lab.Presentation.MVC.ViewModels;
-using System.Linq;
 
 namespace Lab.Presentation.MVC.AutoMapper
 {
@@ -12,17 +11,16 @@ namespace Lab.Presentation.MVC.AutoMapper
             get { return "ViewModelToDomainProfile"; }
         }
 
-        protected override void Configure()
+        public ViewModelToDomainProfile()
         {
-            Mapper.CreateMap<ProdutoViewModel, Produto>()
+            CreateMap<ProdutoViewModel, Produto>()
                 .ForMember(p => p.Promocao, opt => opt.Ignore());
 
-            Mapper.CreateMap<CarrinhoViewModel, Carrinho>();
+            CreateMap<CarrinhoViewModel, Carrinho>();
 
-            Mapper.CreateMap<ItemCarrinhoViewModel, ItemCarrinho>()
+            CreateMap<ItemCarrinhoViewModel, ItemCarrinho>()
                 .ForMember(p => p.Produto, opt => opt.Ignore())
                 .ForMember(p => p.PromocaoAplicavel, opt => opt.Ignore());
-
         }
     }
 }
