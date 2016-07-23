@@ -13,7 +13,7 @@ namespace Lab.Infra.Data.NH.Repositories
 
         public UnitOfWork()
         {
-            var sessionManager = ServiceLocator.Current.GetInstance<SessionManager>();
+            var sessionManager = ServiceLocator.Current.GetInstance<UnitOfWorkManager>();
             _session = sessionManager.Session;
         }
 

@@ -1,13 +1,13 @@
 ﻿using Ninject.Modules;
+using Ninject.Web.Common;
+
 using Lab.Application;
 using Lab.Application.Interfaces;
 using Lab.Domain.Interfaces.Repositories;
 using Lab.Domain.Interfaces.Services;
 using Lab.Domain.Services;
 
-using Lab.Infra.Data.NH.Session;
 using Lab.Infra.Data.NH.Repositories;
-//using Lab.Infra.Data.EF.Context;
 //using Lab.Infra.Data.EF.Repositories;
 
 namespace Lab.Infra.CrossCutting.IoC
@@ -16,10 +16,8 @@ namespace Lab.Infra.CrossCutting.IoC
     {
         public override void Load()
         {
-            //Bind<ContextManager>().ToSelf();
-            Bind<SessionManager>().ToSelf();
-
-            Bind<IUnitOfWork>().To<UnitOfWork>();
+            Bind<UnitOfWorkManager>().ToSelf();
+            Bind<IUnitOfWork>().To<UnitOfWork>().InRequestScope();
 
             Bind<IProdutoAppService>().To<ProdutoAppService>();
             Bind<ICarrinhoAppService>().To<CarrinhoAppService>();

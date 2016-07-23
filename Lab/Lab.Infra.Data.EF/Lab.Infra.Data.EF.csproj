@@ -54,7 +54,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Context\ContextManager.cs" />
+    <Compile Include="Repositories\UnitOfWorkManager.cs" />
     <Compile Include="Context\LabContext.cs" />
     <Compile Include="EntityConfig\ProdutoConfiguration.cs" />
     <Compile Include="Migrations\Configuration.cs" />

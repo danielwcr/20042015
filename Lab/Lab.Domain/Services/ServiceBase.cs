@@ -17,27 +17,27 @@ namespace Lab.Domain.Services
             this.repository = repository;
         }
 
-        public void Insert(T obj)
+        public virtual void Insert(T obj)
         {
             repository.Insert(obj);
         }
 
-        public T Get(int id)
+        public virtual T Get(int id)
         {
             return repository.Get(id);
         }
 
-        public IEnumerable<T> GetAll()
+        public virtual IEnumerable<T> GetAll()
         {
             return repository.GetAll();
         }
 
-        public void Update(T obj)
+        public virtual void Update(T obj)
         {
             repository.Update(obj);
         }
 
-        public void Delete(T obj)
+        public virtual void Delete(T obj)
         {
             repository.Delete(obj);
         }

@@ -1,4 +1,5 @@
-﻿using NHibernate;
+﻿using Lab.Infra.Data.NH.Session;
+using NHibernate;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -6,11 +7,11 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Web;
 
-namespace Lab.Infra.Data.NH.Session
+namespace Lab.Infra.Data.NH.Repositories
 {
-    public class SessionManager
+    public class UnitOfWorkManager
     {
-        const string ContextKey = "SessionManager.Session";
+        const string ContextKey = "UnitOfWorkManager.Session";
 
         public ISession Session
         {
@@ -20,10 +21,7 @@ namespace Lab.Infra.Data.NH.Session
                     HttpContext.Current.Items[ContextKey] = SessionFactory.CreateSessionFactory().OpenSession();
 
                 return (ISession)HttpContext.Current.Items[ContextKey];
-
             }
         }
-
-
     }
 }

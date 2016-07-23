@@ -16,7 +16,7 @@ namespace Lab.Infra.Data.EF.Repositories
 
         public RepositoryBase()
         {
-            var contextManager = ServiceLocator.Current.GetInstance<ContextManager>();
+            var contextManager = ServiceLocator.Current.GetInstance<UnitOfWorkManager>();
             Context = contextManager.Context;
         }
 
