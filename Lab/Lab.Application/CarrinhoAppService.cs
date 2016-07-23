@@ -1,4 +1,5 @@
-﻿using Lab.Application.Interfaces;
+﻿using Lab.Application.Aspect;
+using Lab.Application.Interfaces;
 using Lab.Domain.Entities;
 using Lab.Domain.Interfaces.Services;
 using System;
@@ -9,7 +10,7 @@ using System.Threading.Tasks;
 
 namespace Lab.Application
 {
-    public class CarrinhoAppService : AppServiceBase, ICarrinhoAppService
+    public class CarrinhoAppService : ICarrinhoAppService
     {
         private readonly ICarrinhoService service;
 
@@ -18,43 +19,22 @@ namespace Lab.Application
             this.service = service;
         }
 
+        [UnitOfWorkAspect]
         public Carrinho AtualizarItensCarrinho(Carrinho carrinho)
         {
-            Carrinho retorno = null;
-
-            using (var scope = BeginTransaction())
-            {
-                retorno = service.AtualizarItensCarrinho(carrinho);
-                scope.Commit();
-            }
-
-            return retorno;
+            return service.AtualizarItensCarrinho(carrinho);
         }
 
+        [UnitOfWorkAspect]
         public Carrinho AdicionarItemCarrinho(Carrinho carrinho, int codigoProduto)
         {
-            Carrinho retorno = null;
-
-            using (var scope = BeginTransaction())
-            {
-                retorno = service.AdicionarItemCarrinho(carrinho, codigoProduto);
-                scope.Commit();
-            }
-
-            return retorno;
+            return service.AdicionarItemCarrinho(carrinho, codigoProduto);
         }
 
+        [UnitOfWorkAspect]
         public Carrinho RemoverItemCarrinho(Carrinho carrinho, int codigoProduto)
         {
-            Carrinho retorno = null;
-
-            using (var scope = BeginTransaction())
-            {
-                retorno = service.RemoverItemCarrinho(carrinho, codigoProduto);
-                scope.Commit();
-            }
-
-            return retorno;
+            return service.RemoverItemCarrinho(carrinho, codigoProduto);
         }
     }
 }

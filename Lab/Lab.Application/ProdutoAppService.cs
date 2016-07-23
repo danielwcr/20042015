@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace Lab.Application
 {
-    public class ProdutoAppService : AppEntityServiceBase<Produto>, IProdutoAppService
+    public class ProdutoAppService : AppServiceBase<Produto>, IProdutoAppService
     {
         private readonly IProdutoService service;
 

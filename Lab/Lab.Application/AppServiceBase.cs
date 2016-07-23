@@ -7,18 +7,45 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Lab.Application.Aspect;
 
 namespace Lab.Application
 {
-    public abstract class AppServiceBase
+    public class AppServiceBase<T> where T : class 
     {
-        public IUnitOfWork BeginTransaction()
+        private readonly IServiceBase<T> service;
+
+        public AppServiceBase(IServiceBase<T> service)
         {
-            var unitOfWork = ServiceLocator.Current.GetInstance<IUnitOfWork>();
+            this.service = service;
+        }
 
-            unitOfWork.BeginTransaction();
+        [UnitOfWorkAspect]
+        public void Insert(T obj)
+        {
+            service.Insert(obj);
+        }
 
-            return unitOfWork;
+        public T Get(int id)
+        {
+            return service.Get(id);
+        }
+
+        public IEnumerable<T> GetAll()
+        {
+            return service.GetAll();
+        }
+
+        [UnitOfWorkAspect]
+        public void Update(T obj)
+        {
+            service.Update(obj);
+        }
+
+        [UnitOfWorkAspect]
+        public void Delete(T obj)
+        {
+            service.Delete(obj);
         }
     }
 }
