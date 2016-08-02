@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Lab.Application.Interfaces
 {
-    public interface IProdutoAppService : IAppEntityServiceBase<Produto>
+    public interface IProdutoAppService : IAppServiceBase<Produto, int>
     {
         
     }

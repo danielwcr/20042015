@@ -1,51 +1,40 @@
-﻿using Microsoft.Practices.ServiceLocation;
-using Lab.Application.Interfaces;
-using Lab.Domain.Interfaces.Repositories;
-using Lab.Domain.Interfaces.Services;
+﻿using Lab.Domain.Interfaces.Services;
 using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using Lab.Application.Aspect;
+using Lab.Domain.Entities;
 
 namespace Lab.Application
 {
-    public class AppServiceBase<T> where T : class 
+    public abstract class AppServiceBase<TEntity, TId> where TEntity : EntityBase<TId> where TId : IEquatable<TId>
     {
-        private readonly IServiceBase<T> service;
+        private readonly IServiceBase<TEntity, TId> service;
 
-        public AppServiceBase(IServiceBase<T> service)
+        public AppServiceBase(IServiceBase<TEntity, TId> service)
         {
             this.service = service;
         }
 
-        [UnitOfWorkAspect]
-        public void Insert(T obj)
-        {
-            service.Insert(obj);
-        }
-
-        public T Get(int id)
+        public TEntity Get(TId id)
         {
             return service.Get(id);
         }
 
-        public IEnumerable<T> GetAll()
+        public IEnumerable<TEntity> GetAll()
         {
             return service.GetAll();
         }
 
         [UnitOfWorkAspect]
-        public void Update(T obj)
+        public void Save(TEntity entity)
         {
-            service.Update(obj);
+            service.Save(entity);
         }
 
         [UnitOfWorkAspect]
-        public void Delete(T obj)
+        public void Delete(TEntity entity)
         {
-            service.Delete(obj);
+            service.Delete(entity);
         }
     }
 }

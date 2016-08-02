@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Lab.Domain.Interfaces.Repositories
 {
-    public interface IProdutoRepository : IRepositoryBase<Produto>
+    public interface IProdutoRepository : IRepositoryBase<Produto, int>
     {
 
     }

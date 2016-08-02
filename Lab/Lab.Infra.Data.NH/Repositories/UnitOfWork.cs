@@ -1,8 +1,6 @@
 ﻿using Microsoft.Practices.ServiceLocation;
 using NHibernate;
 using Lab.Domain.Interfaces.Repositories;
-using Lab.Infra.Data.NH.Session;
-using System;
 
 namespace Lab.Infra.Data.NH.Repositories
 {

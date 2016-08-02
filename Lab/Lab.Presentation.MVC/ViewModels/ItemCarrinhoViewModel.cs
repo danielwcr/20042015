@@ -1,4 +1,5 @@
-﻿using Lab.Resources;
+﻿using Lab.Domain.Entities;
+using Lab.Resources;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
@@ -12,16 +13,15 @@ namespace Lab.Presentation.MVC.ViewModels
         [Key]
         public int CodigoProduto { get; set; }
 
-        [Display(Name = "Quantidade", ResourceType = typeof(Resource))]
+        [Display(Name = nameof(Quantidade), ResourceType = typeof(Resource))]
         [Range(1, 9999999)]
         public int Quantidade { get; set; }
 
-        [Display(Name = "Preco", ResourceType = typeof(Resource))]
-        [DataType(DataType.Currency)]
+        [Display(Name = nameof(Preco), ResourceType = typeof(Resource))]
         public decimal Preco { get; set; }
 
         public PromocaoViewModel PromocaoAplicavel { get; set; }
 
-        public ProdutoViewModel Produto { get; set; }
+        public Produto Produto { get; set; }
     }
 }

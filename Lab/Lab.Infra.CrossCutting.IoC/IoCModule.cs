@@ -7,8 +7,8 @@ using Lab.Domain.Interfaces.Repositories;
 using Lab.Domain.Interfaces.Services;
 using Lab.Domain.Services;
 
-using Lab.Infra.Data.NH.Repositories;
-//using Lab.Infra.Data.EF.Repositories;
+//using Lab.Infra.Data.NH.Repositories;
+using Lab.Infra.Data.EF.Repositories;
 
 namespace Lab.Infra.CrossCutting.IoC
 {

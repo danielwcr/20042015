@@ -1,10 +1,5 @@
 ﻿using Lab.Infra.Data.EF.Context;
-using System;
-using System.Collections.Generic;
 using System.Data.Entity;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Web;
 
 namespace Lab.Infra.Data.EF.Repositories

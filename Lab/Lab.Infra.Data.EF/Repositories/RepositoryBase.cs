@@ -7,10 +7,12 @@ using System.Data.Entity;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Lab.Domain.Entities;
+using Lab.Domain.Common;
 
 namespace Lab.Infra.Data.EF.Repositories
 {
-    public class RepositoryBase<T> : IRepositoryBase<T> where T : class
+    public abstract class RepositoryBase<TEntity, TId> : IRepositoryBase<TEntity, TId> where TEntity : EntityBase<TId> where TId : IEquatable<TId>
     {
         protected DbContext Context { get; private set; }
 
@@ -20,29 +22,30 @@ namespace Lab.Infra.Data.EF.Repositories
             Context = contextManager.Context;
         }
 
-        public void Insert(T obj)
+        public virtual TEntity Get(TId id)
         {
-            Context.Set<T>().Add(obj);
+            return Context.Set<TEntity>().Find(id);
         }
 
-        public T Get(int id)
+        public virtual IEnumerable<TEntity> GetAll()
         {
-            return Context.Set<T>().Find(id);
+            return Context.Set<TEntity>().ToList();
         }
 
-        public IEnumerable<T> GetAll()
+        public virtual void Save(TEntity entity)
         {
-            return Context.Set<T>().ToList();
+            if (!entity.IsValid())
+                throw new BusinessException(entity.BrokenRules);
+
+            if (entity.Codigo.Equals(default(TId)))
+                Context.Set<TEntity>().Add(entity);
+            else
+                Context.Entry(entity).State = EntityState.Modified;
         }
 
-        public void Update(T obj)
+        public virtual void Delete(TEntity obj)
         {
-            Context.Entry<T>(obj).State = System.Data.Entity.EntityState.Modified;
-        }
-
-        public void Delete(T obj)
-        {
-            Context.Set<T>().Remove(obj);
+            Context.Set<TEntity>().Remove(obj);
         }
     }
 }

@@ -46,6 +46,9 @@ namespace Lab.Presentation.MVC
 
             bundles.Add(new ScriptBundle("~/bundles/app").IncludeDirectory(
                        "~/App_Script/", "*.js", true));
+
+
+            BundleTable.EnableOptimizations = false;
         }
     }
 }

@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Lab.Domain.Interfaces.Services
 {
-    public interface IProdutoService : IServiceBase<Produto>
+    public interface IProdutoService : IServiceBase<Produto, int>
     {
     }
 }

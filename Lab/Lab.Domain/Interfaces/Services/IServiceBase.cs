@@ -1,4 +1,5 @@
-﻿using Lab.Domain.Interfaces.Repositories;
+﻿using Lab.Domain.Entities;
+using Lab.Domain.Interfaces.Repositories;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -7,16 +8,14 @@ using System.Threading.Tasks;
 
 namespace Lab.Domain.Interfaces.Services
 {
-    public interface IServiceBase<T> where T : class 
+    public interface IServiceBase<TEntity, TId> where TEntity : EntityBase<TId> where TId : IEquatable<TId>
     {
-        void Insert(T obj);
+        TEntity Get(TId id);
 
-        T Get(int id);
+        IEnumerable<TEntity> GetAll();
 
-        IEnumerable<T> GetAll();
+        void Save(TEntity entity);
 
-        void Update(T obj);
-
-        void Delete(T obj);
+        void Delete(TEntity entity);
     }
 }

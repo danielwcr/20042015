@@ -1,13 +1,14 @@
 ﻿using Microsoft.Practices.ServiceLocation;
 using NHibernate;
 using Lab.Domain.Interfaces.Repositories;
-using Lab.Infra.Data.NH.Session;
 using System.Collections.Generic;
-using System.Linq;
+using Lab.Domain.Entities;
+using System;
+using Lab.Domain.Common;
 
 namespace Lab.Infra.Data.NH.Repositories
 {
-    public class RepositoryBase<T> : IRepositoryBase<T> where T : class
+    public abstract class RepositoryBase<TEntity, TId> : IRepositoryBase<TEntity, TId> where TEntity : EntityBase<TId> where TId : IEquatable<TId>
     {
         protected ISession Session { get; private set; }
 
@@ -17,29 +18,30 @@ namespace Lab.Infra.Data.NH.Repositories
             Session = sessionManager.Session;
         }
 
-        public void Insert(T obj)
+        public TEntity Get(TId id)
         {
-            Session.Save(obj);
+            return Session.Get<TEntity>(id);
         }
 
-        public T Get(int id)
+        public IEnumerable<TEntity> GetAll()
         {
-            return Session.Get<T>(id);
+            return Session.QueryOver<TEntity>().List();
         }
 
-        public IEnumerable<T> GetAll()
+        public void Save(TEntity entity)
         {
-            return Session.QueryOver<T>().List();
+            if (!entity.IsValid())
+                throw new BusinessException(entity.BrokenRules);
+
+            if (entity.Codigo.Equals(default(TId)))
+                Session.Save(entity);
+            else
+                Session.Update(entity);
         }
 
-        public void Update(T obj)
+        public void Delete(TEntity entity)
         {
-            Session.Update(obj);
-        }
-
-        public void Delete(T obj)
-        {
-            Session.Delete(obj);
+            Session.Delete(entity);
         }
     }
 }

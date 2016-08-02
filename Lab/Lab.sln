@@ -31,6 +31,8 @@ Project("{8BB2217D-0F2D-49D1-97BC-3654ED321F3B}") = "Lab.Presentation.Web", "Lab
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Lab.Resources", "Lab.Resources\Lab.Resources.csproj", "{EA2E7B4C-A080-4E91-A5DB-07780592B45E}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{35506222-86C6-4002-AA2D-1FEB7220F6BC}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -88,5 +90,8 @@ Global
 		{03B73BF7-5C77-4241-B0F8-150A19758AB4} = {CE2BE299-148B-4B33-8137-FCA4CD981AD2}
 		{7D13CD05-74F6-4B08-8E0A-BB9CA0A05943} = {1247B0C7-A2D6-404A-8F88-588DD94B09B1}
 		{EA2E7B4C-A080-4E91-A5DB-07780592B45E} = {CE2BE299-148B-4B33-8137-FCA4CD981AD2}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		RESX_NeutralResourcesLanguage = pt-BR
 	EndGlobalSection
 EndGlobal

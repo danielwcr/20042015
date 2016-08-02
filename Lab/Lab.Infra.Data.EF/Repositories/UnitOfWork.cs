@@ -1,11 +1,5 @@
 ﻿using Microsoft.Practices.ServiceLocation;
 using Lab.Domain.Interfaces.Repositories;
-using Lab.Infra.Data.EF.Context;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Data.Entity;
 
 namespace Lab.Infra.Data.EF.Repositories

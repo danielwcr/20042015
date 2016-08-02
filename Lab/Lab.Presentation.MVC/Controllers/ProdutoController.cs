@@ -20,7 +20,7 @@ namespace Lab.Presentation.MVC.Controllers
         public ActionResult Index()
         {
             var produtos = produtoApp.GetAll();
-            return View(Mapper.Map<IEnumerable<ProdutoViewModel>>(produtos));
+            return View(produtos);
         }
 
         public ActionResult IndexAngular()
@@ -31,13 +31,7 @@ namespace Lab.Presentation.MVC.Controllers
         public ActionResult ObterProdutos()
         {
             var produtos = produtoApp.GetAll();
-            return Json(Mapper.Map<IEnumerable<ProdutoViewModel>>(produtos), JsonRequestBehavior.AllowGet);
-        }
-
-        public ActionResult Details(int id)
-        {
-            var produto = produtoApp.Get(id);
-            return View(Mapper.Map<ProdutoViewModel>(produto));
+            return Json(produtos, JsonRequestBehavior.AllowGet);
         }
 
         public ActionResult Create()
@@ -45,49 +39,43 @@ namespace Lab.Presentation.MVC.Controllers
             return View();
         }
 
-        [HttpPost]
-        [ValidateAntiForgeryToken]
-        public ActionResult Create(ProdutoViewModel produtoViewModel)
+        [HttpPost, ValidateAntiForgeryToken]
+        public ActionResult Create(Produto produto)
         {
             if (ModelState.IsValid)
             {
-                var produto = Mapper.Map<Produto>(produtoViewModel);
-                produtoApp.Insert(produto);
+                produtoApp.Save(produto);
                 return RedirectToAction("Index");
             }
 
-            return View(produtoViewModel);
+            return View(produto);
         }
 
         public ActionResult Edit(int id)
         {
             var produto = produtoApp.Get(id);
-            return View(Mapper.Map<ProdutoViewModel>(produto));
+            return View(produto);
         }
 
-        [HttpPost]
-        [ValidateAntiForgeryToken]
-        public ActionResult Edit(ProdutoViewModel produtoViewModel)
+        [HttpPost, ValidateAntiForgeryToken]
+        public ActionResult Edit(Produto produto)
         {
             if (ModelState.IsValid)
             {
-                var produto = Mapper.Map<Produto>(produtoViewModel);
-                produtoApp.Update(produto);
-
+                produtoApp.Save(produto);
                 return RedirectToAction("Index");
             }
 
-            return View(produtoViewModel);
+            return View(produto);
         }
 
         public ActionResult Delete(int id)
         {
             var produto = produtoApp.Get(id);
-            return View(Mapper.Map<ProdutoViewModel>(produto));
+            return View(produto);
         }
 
-        [HttpPost, ActionName("Delete")]
-        [ValidateAntiForgeryToken]
+        [HttpPost, ActionName("Delete"), ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(int id)
         {
             var produto = produtoApp.Get(id);

@@ -13,8 +13,6 @@ namespace Lab.Presentation.MVC.AutoMapper
 
         public DomainToViewModelProfile()
         {
-            CreateMap<Produto, ProdutoViewModel>();
-
             CreateMap<Carrinho, CarrinhoViewModel>();
             CreateMap<ItemCarrinho, ItemCarrinhoViewModel>();
 

@@ -40,6 +40,7 @@
     <Compile Include="Common\PromocaoAttribute.cs" />
     <Compile Include="Entities\Carrinho.cs" />
     <Compile Include="Entities\EntityBase.cs" />
+    <Compile Include="Common\BusinessException.cs" />
     <Compile Include="Interfaces\Entities\IEntityBase.cs" />
     <Compile Include="Entities\Promocao\PagueUmLeveDois.cs" />
     <Compile Include="Entities\Promocao\TresPorDezReais.cs" />

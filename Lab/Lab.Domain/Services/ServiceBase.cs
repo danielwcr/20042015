@@ -1,4 +1,5 @@
-﻿using Lab.Domain.Interfaces.Repositories;
+﻿using Lab.Domain.Entities;
+using Lab.Domain.Interfaces.Repositories;
 using Lab.Domain.Interfaces.Services;
 using System;
 using System.Collections.Generic;
@@ -8,38 +9,33 @@ using System.Threading.Tasks;
 
 namespace Lab.Domain.Services
 {
-    public class ServiceBase<T> : IServiceBase<T> where T : class
+    public abstract class ServiceBase<TEntity, TId> : IServiceBase<TEntity, TId> where TEntity : EntityBase<TId> where TId : IEquatable<TId>
     {
-        private readonly IRepositoryBase<T> repository;
+        private readonly IRepositoryBase<TEntity, TId> repository;
 
-        public ServiceBase(IRepositoryBase<T> repository)
+        public ServiceBase(IRepositoryBase<TEntity, TId> repository)
         {
             this.repository = repository;
         }
 
-        public virtual void Insert(T obj)
-        {
-            repository.Insert(obj);
-        }
-
-        public virtual T Get(int id)
+        public virtual TEntity Get(TId id)
         {
             return repository.Get(id);
         }
 
-        public virtual IEnumerable<T> GetAll()
+        public virtual IEnumerable<TEntity> GetAll()
         {
             return repository.GetAll();
         }
 
-        public virtual void Update(T obj)
+        public virtual void Save(TEntity entity)
         {
-            repository.Update(obj);
+            repository.Save(entity);
         }
 
-        public virtual void Delete(T obj)
+        public virtual void Delete(TEntity entity)
         {
-            repository.Delete(obj);
+            repository.Delete(entity);
         }
     }
 }

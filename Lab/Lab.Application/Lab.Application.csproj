@@ -52,7 +52,7 @@
     <Compile Include="AppServiceBase.cs" />
     <Compile Include="Aspect\UnitOfWorkAspect.cs" />
     <Compile Include="CarrinhoAppService.cs" />
-    <Compile Include="Interfaces\IAppEntityServiceBase.cs" />
+    <Compile Include="Interfaces\IAppServiceBase.cs" />
     <Compile Include="Interfaces\ICarrinhoAppService.cs" />
     <Compile Include="Interfaces\IProdutoAppService.cs" />
     <Compile Include="ProdutoAppService.cs" />

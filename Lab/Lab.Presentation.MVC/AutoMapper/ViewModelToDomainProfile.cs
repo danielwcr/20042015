@@ -13,9 +13,6 @@ namespace Lab.Presentation.MVC.AutoMapper
 
         public ViewModelToDomainProfile()
         {
-            CreateMap<ProdutoViewModel, Produto>()
-                .ForMember(p => p.Promocao, opt => opt.Ignore());
-
             CreateMap<CarrinhoViewModel, Carrinho>();
 
             CreateMap<ItemCarrinhoViewModel, ItemCarrinho>()

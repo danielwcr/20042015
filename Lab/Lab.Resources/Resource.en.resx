@@ -193,9 +193,12 @@
     <value>No promotion</value>
   </data>
   <data name="TresPorDezReais" xml:space="preserve">
-    <value>Three per 10 Reals</value>
+    <value>Three per 10 reais</value>
   </data>
   <data name="Required" xml:space="preserve">
     <value>The {0} field is requied.</value>
+  </data>
+  <data name="PrecoNaoPodeSer123456" xml:space="preserve">
+    <value>Price should not be 123456</value>
   </data>
 </root>

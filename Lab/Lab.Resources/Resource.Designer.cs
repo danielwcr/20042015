@@ -205,6 +205,15 @@ namespace Lab.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Preço não deve ser 123456.
+        /// </summary>
+        public static string PrecoNaoPodeSer123456 {
+            get {
+                return ResourceManager.GetString("PrecoNaoPodeSer123456", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Produto.
         /// </summary>
         public static string Produto {
@@ -295,7 +304,7 @@ namespace Lab.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Três por 10 Reais.
+        ///   Looks up a localized string similar to Três por 10 reais.
         /// </summary>
         public static string TresPorDezReais {
             get {

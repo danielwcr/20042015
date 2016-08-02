@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace Lab.Infra.Data.NH.Repositories
 {
-    public class ProdutoRepository : RepositoryBase<Produto>, IProdutoRepository
+    public class ProdutoRepository : RepositoryBase<Produto, int>, IProdutoRepository
     {
     }
 }
